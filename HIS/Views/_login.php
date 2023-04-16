@@ -1,25 +1,41 @@
 
-    <?php
-    if (isset($_SESSION['message'])) {
-        ?>
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>Hey!</strong>
-            <?= $_SESSION['message']; ?>
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div>
-        <?php
 
-        unset($_SESSION['message']);
-    }
 
-    ?>
-    <div class="header">
-    <h1>Health Information System Kosova</h1>
-    
-</div>
 
     <div class="login">
         <h1>Identifikimi</h1>
+        <?php
+        if (isset($_SESSION['message']) || isset($_SESSION['messageFromSignup']) ) {
+        if (isset($_SESSION['message'])){
+            ?>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Hey!</strong>
+
+                <?= $_SESSION['message']; ?>
+
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+            <?php
+        }elseif(isset($_SESSION['messageFromSignup'])){
+        ?>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Hey!</strong>
+
+            <?= $_SESSION['messageFromSignup']; ?>
+
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+            <?php
+            }
+            ?>
+
+            <?php
+
+            unset($_SESSION['message']);
+            unset($_SESSION['messageFromSignup']);
+        }
+
+        ?>
         <form  method="post">
           <label for="username">Username</label>
           <input type="text" id="username" name="username" placeholder="Shkruani username-in" required>
@@ -34,7 +50,7 @@
           </div>
   
           <div class="sign-up">
-            Nese nuk keni llogari? <a href="register.html">Regjistrohu ketu</a>
+            Nese nuk keni llogari? <a href="SignUpPage.php">Regjistrohu ketu</a>
           </div>
         </form>
       </div>
@@ -74,7 +90,7 @@ body {
   }
   
 .header {
-    height: 200px;
+    height: 50px;
  
     position: relative;
 

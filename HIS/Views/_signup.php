@@ -1,105 +1,151 @@
+<div class="regjistimi">
+  <h1>Regjistrimi</h1>
+  <form method="POST" >
 
-<form class="form"  method="POST" >
-    <?php
-    if (isset($_SESSION['message'])) {
-        ?>
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>Hey!</strong>
-            <?= $_SESSION['message']; ?>
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div>
-        <?php
-
-        unset($_SESSION['message']);
-    }
-
-    ?>
-    <span class="title">Register</span>
-    <label for="username" class="label">Username</label>
-    <input type="text" id="username" name="username"  class="input">
-    <label for="email" class="label">Email</label>
-    <input type="email" id="email" name="email"  class="input">
-    <label for="password" class="label">Password</label>
-    <input type="password" id="password" name="password"  class="input">
-    <input type="submit" class="submit" name="Submit">
-  </form>
-<div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
-            </div>
-            <div class="modal-body">
-                <p>Some text in the modal.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
+  <?php
+  if (isset($_SESSION['messagefromsignup'])) {
+  ?>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Hey!</strong>
+      <?= $_SESSION['memessagefromsignupssage']; ?>
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
+  <?php
+
+    unset($_SESSION['messagefromsignup']);
+  }
+
+  ?>
+
+    <label for="username" class="label">Username</label>
+    <input type="text" id="username" name="username" placeholder="Shkruani username" class="input" required>
+
+    <label for="email" class="label">Email</label>
+    <input type="email" id="email" name="email" placeholder="Shkruani e-Mail" class="input" required>
+
+    <label for="email" class="label">Phone</label>
+    <input type="text" id="phone" name="phone" placeholder="Shkruani telefonin" class="input" required>
+
+    <label for="password" class="label">Password</label>
+    <input type="password" id="password" name="password"placeholder="Shkruani fjalkalimin" class="input" required>
+
+    <label for="emri">Emri</label>
+    <input type="text" id="emri" name="name" placeholder="Shkruani emrin" required>
+
+    <label for="mbiemri">Mbiemri</label>
+    <input type="text" id="mbiemri" name="surname" placeholder="Shkruani mbiemrin" required>
+
+
+    <label for="nrpersonal">Numri personal</label>
+    <input type="text" id="nrpersonal" name="personalnr" placeholder="Shkruani numrin personal" required>
+
+
+    <label for="profesioni">Profesioni</label>
+    <input type="text" id="pozita" name="profession" placeholder="Shkruani profesionin" required>
+    
+  <input type="submit" name ="submit" value="Regjistrohu">
+  </form>
+
+
+  <div class="mbrapa">
+    <a href="LoginPage.php">Keni llogari? Kycu tani!</a>
+  </div>
 </div>
 
   <style>
-    .form {
-  max-width: 320px;
-  width: 100%;
-  background-color: #fff;
-  padding: 20px;
-  box-shadow: 0px 0px 0px 4px rgba(52, 52, 53, 0.185);
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-}
+    * {
+      margin: 0;
+      padding: 0;
+    }
 
-.title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #1a202c;
-}
+    body {
+      min-width: 400px;
+      background-image: url("img/pic1.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
 
-.label {
-  color: rgb(0, 0, 0);
-  margin-bottom: 4px;
-}
+    .headerregister {
+      height: 200px;
 
-.input {
-  padding: 10px;
-  margin-bottom: 20px;
-  width: 100%;
-  font-size: 1rem;
-  color: #4a5568;
-  outline: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  transition: all 0.2s ease-in-out;
-}
+      position: relative;
 
-.input:focus {
-  background-color: #fff;
-  box-shadow: 0 0 0 2px #cbd5e0;
-}
+    }
 
-.input:valid {
-  border: 1px solid green;
-}
+    .headerregister h1 {
 
-.input:invalid {
-  border: 1px solid rgba(14, 14, 14, 0.205);
-}
+      font-size: 45px;
+      font-family: 'Pacifico';
+      position: absolute;
+      top: 20px;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
 
-.submit {
-  background-color: #1a202c;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
+
+    .regjistimi {
+      background-color: #fff;
+    width: 500px;
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+
+    }
+
+    .regjistimi h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-column-gap: 10px;
+      align-items: center;
+    }
+
+    label {
+      margin-bottom: 10px;
+    }
+
+
+    input {
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    input[type="submit"] {
+      background-color: #4c98af;
+
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+
+      background-color: #085168;
+    }
+
+
+
+
+    a {
+      color: #1ea9d3;
+    }
+
+    .mbrapa {
+      align-self: center;
+      margin-top: 20px;
+    }
   </style>
