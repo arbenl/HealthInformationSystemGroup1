@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Health Information System</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel="stylesheet" href="crud.css">
+</head>
+<body>
+	<h1>Health Information System</h1>
+	<div id="container">
+		<h2>Krijo Recorde</h2>
+		<form id="create-form">
+			<label for="patient-name">Emri i pacientit:</label>
+			<input type="text" id="patient-name" name="patient-name" required><br>
+			<label for="patient-age">Mosha e pacientit:</label>
+			<input type="number" id="patient-age" name="patient-age" required><br>
+			<label for="patient-gender">Gjinia e pacientit:</label>
+			<select id="patient-gender" name="patient-gender" required>
+				<option value="">Zgjedhni gjinin</option>
+				<option value="male">Mashkull</option>
+				<option value="female">Femer</option>
+				<option value="other">Tjeter</option>
+				<option value="not-disclosed">Preferoj te mos pergjigjem</option>
+			</select><br>
+			<label for="patient-height">Gjatesia e pacientit:</label>
+			<input type="number" id="patient-height" name="patient-height" required><br>
+			<label for="patient-weight">Pesha e pacientit:</label>
+			<input type="number" id="patient-weight" name="patient-weight" required><br>
+			<button type="submit" id="create-btn">Krijo</button>
+		</form>
+
+		<h2>Lexo Recordet</h2>
+		<form id="read-form">
+			<label for="search-id">Kerko me ID:</label>
+			<input type="number" id="search-id" name="search-id" required>
+			<button type="submit" id="read-btn">Lexo</button>
+		</form>
+
+		<h2>Perditso Recordet</h2>
+		<form id="update-form">
+			<label for="update-id">Perditso me ID:</label>
+			<input type="number" id="update-id" name="update-id" required><br>
+			<label for="patient-name">Emri i pacientit:</label>
+			<input type="text" id="update-patient-name" name="update-patient-name" required><br>
+			<label for="patient-age">Mosha e pacientit:</label>
+			<input type="number" id="update-patient-age" name="update-patient-age" required><br>
+			<label for="patient-gender">Gjinia e pacientit</label>
+			<select id="update-patient-gender" name="update-patient-gender" required>
+				<option value="">Zgjedhni gjinin</option>
+				<option value="male">Mashkull</option>
+				<option value="female">Femer</option>
+				<option value="other">Tjeter</option>
+				<option value="not-disclosed">Preferoj te mos pergjigjem</option>
+			</select><br>
+			<label for="patient-height">Gjatesia e pacientit:</label>
+			<input type="number" id="update-patient-height" name="update-patient-height" required><br>
+			<label for="patient-weight">Pesha e pacientit:</label>
+			<input type="number" id="update-patient-weight" name="update-patient-weight" required><br>
+			<button type="submit" id="update-btn">Perditso</button>
+		</form>
+
+		<h2>Fshij Recordet</h2>
+		<form id="delete-form">
+            <label for="patient-id-delete">ID e pacientit:</label>
+            <input type="number" id="patient-id-delete" name="patient-id-delete" placeholder="Jepni ID e pacientit" required><br>
+        <button type="submit">Fshij</button>
+        </form>
+        </div>
+        </body>
+</html>
