@@ -1,8 +1,9 @@
 <?php
-include('Views/_adminHeader.php');
+include('Views/admin/_adminHeader.php');
+?>
+<?php
+include('Views/admin/_adminView.php');
 ?>
 
 
-<h1>
-<?=  $_SESSION['ROLE'];  ?>
-</h1>
+
