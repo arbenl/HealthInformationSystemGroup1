@@ -1,0 +1,69 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f4f4f4;
+}
+
+h1 {
+	text-align: center;
+	margin-top: 50px;
+}
+
+#container {
+	width: 80%;
+	margin: 0 auto;
+	background-color: #fff;
+	padding: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+}
+
+/* Style the form labels and input fields */
+label {
+	display: block;
+	margin-top: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-top: 5px;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+
+select {
+	height: 40px;
+}
+
+button[type="submit"] {
+	background-color: #4CAF50;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	margin-top: 10px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+button[type="submit"]:hover {
+	background-color: #3e8e41;
+}
+
+/* Style the forms */
+#read-form,
+#update-form,
+#delete-form {
+	margin-top: 20px;
+}
+
+h2 {
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
