@@ -4,241 +4,326 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' href='main_page.css'>
     <title>Appointment Scheduling</title>
 </head>
 <body>
 
-    <!--Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
-        <div class="container">
-          <a class="navbar-brand" href="#"><span class="text-primary">Hospital</span> Menagment</a>
-  
-  
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-  
-          <div class="collapse navbar-collapse" id="navbarSupport">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="">Doctors</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="">News</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="">Appointment Scheduling</a>
-              </li>
-              <li class="nav-item">
-                <a class="btn btn-primary ml-lg-3" href="">Login / Register</a>
-              </li>
-            </ul>
-          </div> 
+  <!--Main Section-->
+<div class="appointment-box">
+    <h1>Health Information System Kosova</h1>
+    <h2>Formulari për termin të pacientit</h2>
+
+    <form>
+
+      <!--Emri dhe Mbiemri-->
+      <div class="text-pacienti">
+          <div class="emri">
+          <label> Emri: </label>
+          <input id=""
+            type="text"
+            name=""
+            required=""
+          /></div>
+          <div class="mbiemri">
+          <label> Mbiemri: </label>
+          <input
+            type="text"
+            name=""
+            required=""
+          /></div>
+      </div>
+        
+
+      <!--Datëlindja-->
+        <div class="text-pacienti">
+          <label> Datëlindja: </label>
+          <input
+            type="date"
+            name="datelindja"
+            id="datelindja"
+          />
         </div>
-    </nav>
 
-    <section>
-        <h1>Plotsoni formularin per termin</h1>
-    </section>
-
-    <!--Main Section-->
-    <main>
-    <!--Formulari-->
-        <div class="formbold-main-wrapper">
-            <div class="formbold-form-wrapper">
-              <form action="https://formbold.com/s/FORM_ID" method="POST">
-                <div class="formbold-mb-5">
-                  <label for="name" class="formbold-form-label"> Emri dhe Mbiemri </label>
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Emri dhe Mbiemri"
-                    class="formbold-form-input"
-                  />
-                </div>
-                <div class="formbold-mb-5">
-                    <label for="datelindja" class="formbold-form-label"> Datëlindja </label>
-                    <input
-                      type="date"
-                      name="datelindja"
-                      id="datelindja"
-                      placeholder="Datëlindja"
-                      class="formbold-form-input"
-                    />
-                </div>
-                <div class="formbold-mb-5">
-                    <label for="gjinia" class="formbold-form-label"> Gjinia </label>
-                    <input
-                      type="radio"
-                      name="gjinia"
-                      value="Femer"
-                      placeholder="Gjinia"
-                      class="formbold-form-input"
-                    />Femer
-                    <input
-                      type="radio"
-                      name="gjinia"
-                      value="Mashkull"
-                      placeholder="Gjinia"
-                      class="formbold-form-input"
-                    />Mashkull
-                    <input
-                      type="radio"
-                      name="gjinia"
-                      value="Pa caktuar"
-                      placeholder="Gjinia"
-                      class="formbold-form-input"
-                    />Pa caktuar
-                </div>
-                <div class="formbold-mb-5">
-                  <label for="phone" class="formbold-form-label"> Numri i telefonit </label>
-                  <input
-                    type="text"
-                    name="phone"
-                    id="phone"
-                    placeholder="Vendosni numrin e telefonit"
-                    class="formbold-form-input"
-                  />
-                </div>
-                <div class="formbold-mb-5">
-                  <label for="email" class="formbold-form-label"> Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="Vendos email adresen"
-                    class="formbold-form-input"
-                  />
-                </div>
-                
-          
-                <div class="formbold-mb-5 formbold-pt-3">
-                  <label class="formbold-form-label formbold-form-label-2">
-                    Detajet e Vendbanimit
-                  </label>
-                  <div class="flex flex-wrap formbold--mx-3">
-                    <div class="w-full sm:w-half formbold-px-3">
-                      <div class="formbold-mb-5">
-                        <input
-                          type="text"
-                          name="rruga"
-                          id="rruga"
-                          placeholder="Rruga"
-                          class="formbold-form-input"
-                        />
-                      </div>
-                    </div>
-                    <div class="w-full sm:w-half formbold-px-3">
-                      <div class="formbold-mb-5">
-                        <input
-                          type="text"
-                          name="qyeti"
-                          id="qyteti"
-                          placeholder="Qyeteti"
-                          class="formbold-form-input"
-                        />
-                      </div>
-                    </div>
-                    <div class="w-full sm:w-half formbold-px-3">
-                      <div class="formbold-mb-5">
-                        <input
-                          type="text"
-                          name="shteti"
-                          id="shteti"
-                          placeholder="Shteti"
-                          class="formbold-form-input"
-                        />
-                      </div>
-                    </div>
-                    <div class="w-full sm:w-half formbold-px-3">
-                      <div class="formbold-mb-5">
-                        <input
-                          type="text"
-                          name="post-code"
-                          id="post-code"
-                          placeholder="Numri i Postës"
-                          class="formbold-form-input"
-                        />
-                      </div>
-                    </div>
-
-                    <div class="formbold-mb-5">
-                        <label for="name" class="formbold-form-label"> Në cilin departament doni të caktoni terminin? </label>
-                        <input
-                          type="text"
-                          name="departamenti"
-                          id="departamenti"
-                          placeholder="Departamenti"
-                          class="formbold-form-input"
-                        />
-                    </div>
-
-
-                  </div>
-                </div>
-
-                <div class="flex flex-wrap formbold--mx-3">
-                    <div class="w-full sm:w-half formbold-px-3">
-                      <div class="formbold-mb-5 w-full">
-                        <label for="date" class="formbold-form-label"> Data e Terminit</label>
-                        <input
-                          type="date"
-                          name="date"
-                          id="date"
-                          class="formbold-form-input"
-                        />
-                      </div>
-                    </div>
-                    <div class="w-full sm:w-half formbold-px-3">
-                      <div class="formbold-mb-5">
-                        <label for="time" class="formbold-form-label"> Ora </label>
-                        <input
-                          type="time"
-                          name="time"
-                          id="time"
-                          class="formbold-form-input"
-                        />
-                      </div>
-                    </div>
-                  </div>
-          
-                <div>
-                  <button class="formbold-btn">Regjistrohuni</button>
-                </div>
-              </form>
-            </div>
-          </div>
-
-    </main>
-
-    <!--Footer-->
-    <footer class="page-footer">
-        <div class="container">
-          <div class="row px-md-3">
-            
-            <div class="col-sm-6 col-lg-3 py-3">
-              <h5>Contact</h5>
-              <p class="footer-link mt-2">Kosovë Prishtinë 10000</p>
-              <a href="#" class="footer-link">+383 49 000 000</a>
-              <a href="#" class="footer-link">hospitalmenagment@universitetiaab.com</a>
-    
-            
-    
-            </div>
-          </div>
-    
-          <hr>
-    
-          <p id="copyright">Copyright &copy; 2023 <a href="https://aab-edu.net/" target="_blank">Kolegji AAB</a>. All right reserved</p>
+      <!--Gjinia-->
+        <div class="radio-pacienti">
+          <label> Gjinia: </label>
+          <input
+            type="radio"
+            name="gjinia"
+            value="femer"
+          />Femër
+          <input
+            type="radio"
+            name="gjinia"
+            value="mashkull"
+          />Mashkull
         </div>
-      </footer>
+
+      <!--Numri i telefonit-->
+        <div class="text-pacienti">
+          <label> Numri i telefonit: </label>
+          <input
+            type="text"
+            name="numri"
+            id="numri"
+          />
+        </div>
+
+      <!--Email-->
+        <div class="text-pacienti">
+          <label> Email: </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+          />
+        </div>
+
+      <!--Adresat-->
+      <label id="vendbanimi">Detajet e Vendbanimit</label>
+      <div class="adresat">
+
+        <div class="v1">
+        <div class="text-pacienti">
+          <label> Rruga: </label>
+          <input
+            type="text"
+            name="rruga"
+            id="rruga"
+          />
+        </div>
+        <div class="text-pacienti">
+          <label> Komuna: </label>
+          <input
+            type="text"
+            name="komuna"
+            id="komuna"
+          />
+        </div>
+      </div>
+
+      <div class="v2">
+        <div class="text-pacienti">
+          <label> Shteti: </label>
+          <input
+            type="text"
+            name="shteti"
+            id="shteti"
+          />
+        </div>
+        <div class="text-pacienti">
+          <label> Numri i Postës: </label>
+          <input
+            type="text"
+            name="posta"
+            id="posta"
+          />
+        </div>
+      </div>
+
+      </div>
+    <!--Pyetja 1-->
+        <label id="vendbanimi"> Në cilin departament doni të caktoni terminin? </label>
+        <div class="pacient">
+        <div id="p1">
+        <!--1--><input 
+          type="checkbox"
+          name="alergologji"
+          id="alergologji"
+        />Alergologji<br>
+        <!--2--><input
+          type="checkbox"
+          name="anatomopatologji"
+          id="anatomopatologji"
+        />Anatomopatologji<br>
+        <!--3--><input
+          type="checkbox"
+          name="anesteziologji"
+          id="anesteziologji"
+        />Anesteziologji<br>
+        <!--4--><input
+          type="checkbox"
+          name="check up"
+          id=""
+        />Check Up<br>
+        <!--5--><input
+          type="checkbox"
+          name="dermatologji"
+          id=""
+        />Dermatologji<br>
+        <!--6--><input
+          type="checkbox"
+          name="qendrat"
+          id=""
+        />Qendrat e Dializës<br>
+        <!--7--><input
+          type="checkbox"
+          name="endokrinologji"
+          id=""
+        />Endokrinologji<br>
+        <!--8--><input
+          type="checkbox"
+          name="gastroenterologji"
+          id=""
+        />Gastroenterologji<br>
+        <!--9--><input
+          type="checkbox"
+          name="endokrinologji"
+          id=""
+        />Hematologji<br>
+        <!--10--><input
+          type="checkbox"
+          name="endokrinologji"
+          id=""
+        />Imazheri e Avancuar<br>
+        <!--11--><input
+          type="checkbox"
+          name="endokrinologji"
+          id=""
+        />Fekondimi in Vitro (IVF)<br>
+        <!--12--><input
+          type="checkbox"
+          name="endokrinologji"
+          id=""
+        />Kardiokirurgji<br>
+        <!--13--><input
+          type="checkbox"
+          name="endokrinologji"
+          id=""
+        />Kardiologji<br>
+        <!--14--><input
+          type="checkbox"
+          name="endokrinologji"
+          id=""
+        />Kirurgji e Përgjithshme</div>
+        <div id="p2">
+        <!--15--><input
+          type="checkbox"
+          name="endokrinologji"
+          id=""
+        />Kirurgji Plastike<br>
+        <!--16--><input
+          type="checkbox"
+          name="endokrinologji"
+          id=""
+        />Nefrologji<br>
+        <!--17--><input
+          type="checkbox"
+          name="endokrinologji"
+          id=""
+        />Neurokirurgji<br>
+        <!--18--><input
+          type="checkbox"
+          name="endokrinologji"
+          id=""
+        />Obstetrikë Gjinekologji<br>
+        <!--19--><input
+          type="checkbox"
+          name="endokrinologji"
+          id=""
+        />Okulistikë<br>
+        <!--20--><input
+          type="checkbox"
+          name="endokrinologji"
+          id=""
+        />Onkologji<br>
+        <!--21--><input
+          type="checkbox"
+          name="endokrinologji"
+          id=""
+        />Ortopedi<br>
+        <!--22--><input
+          type="checkbox"
+          name="endokrinologji"
+          id=""
+        />Neonatologji-Pediatri<br>
+        <!--23--><input
+          type="checkbox"
+          name="endokrinologji"
+          id=""
+        />Pneumologji<br>
+        <!--24--><input
+          type="checkbox"
+          name="endokrinologji"
+          id=""
+        />Proktologji<br>
+        <!--25--><input
+          type="checkbox"
+          name="endokrinologji"
+          id=""
+        />Reumatologji<br>
+        <!--26--><input
+          type="checkbox"
+          name="endokrinologji"
+          id=""
+        />Urologji<br>
+        <!--27--><input
+          type="checkbox"
+          name="endokrinologji"
+          id=""
+        />Urgjencë 24 Orë<br>
+        <!--28--><input
+          type="checkbox"
+          name="endokrinologji"
+          id=""
+        />ORL</div>
+      </div>
+
+      <div class="radio1-pacienti">
+        <label> A keni caktuar termin më herët në të njëjtin departament? </label>
+        <div class="inputi">
+        <input
+          type="radio"
+          name="pyetja2"
+          value="po"
+        />Po
+        <input
+          type="radio"
+          name="pyetja2"
+          value="jo"
+        />Jo
+        </div>
+      </div>
+
+      <div class="text-pacienti">
+        <label> Nëse jeni përgjigjur po, shkruani emrin e doktorit tuaj përgjegjës në atë departament.</label>
+        <input
+          type="text"
+          name="pyetja3"
+          id="pyetja3"
+        />
+      </div>
+
+      <div class="text-pacienti">
+        <div class="data">
+        <label> Data e terminit: </label>
+        <input
+          type="date"
+          name="data"
+          id="data"
+        /></div>
+        <div class="ora">
+        <label> Orari i terminit: </label>
+        <input
+          type="time"
+          name="ora"
+          id="ora"
+        /></div>
+      </div>
+
+  
+
+      <div class="button">
+        <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Dërgo Formularin
+        </a>
+    </form>
+</div>
     
 </body>
 </html>
