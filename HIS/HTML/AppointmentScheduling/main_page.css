@@ -1,0 +1,274 @@
+html{
+    height: 300%;
+}
+body{
+    margin:0;
+    padding:0;
+    font-family:sans-serif;
+    background: linear-gradient(#3760ac,#072444);
+    color: #fff;
+    font-size: 17px;
+}
+
+.appointment-box{
+    position:absolute;
+    top:145%;
+    left:51%;
+    width:800px;
+    padding: 40px;
+    transform: translate(-50% ,-50%);
+    background:rgba(62,147,161,0.5);
+    box-sizing:border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,6);
+    border-radius: 10px;
+}
+
+.appointment-box h1{
+    margin:0 0 30px;
+    padding:0;
+    color: #03e9f4;
+    text-align:center;
+}
+.appointment-box h2{
+    margin:0 0 30px;
+    padding-bottom:40px;
+    color: #fff;
+    text-align:center;
+}
+
+.emri {
+    width: 45%;
+}
+.mbiemri {
+    width: 45%;
+    margin-left: 72px;
+}
+
+.mbiemri label{
+    margin-left: 55%;
+}
+
+.text-pacienti{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+.text-pacienti input{
+width: 100%;
+margin-top: 25px;
+padding: 10px 0;
+color:#fff;
+margin-bottom: 30px;
+border:none;
+border-bottom: 1px solid #fff;
+outline: none;
+background: transparent;
+}
+
+.text-pacienti label{
+    position: absolute;
+    top:  0;
+    left: 0;
+    padding: 10px 0;
+    color:#03e9f4;
+    pointer-events: none;
+}
+
+.radio-pacienti{
+    top: 5px;
+    position: relative;
+}
+.radio-pacienti label{
+    position: absolute;
+    top: -7px;
+    left: 0;
+    /* right: 41px; */
+    margin-right: 20px;
+    padding: 10px 0;
+    color: #03e9f4;
+    pointer-events: none;
+}
+.radio-pacienti input{
+    width: 2%;
+    margin-left: 204px;
+    /* margin-top: 25px; */
+    padding: 0px 0;
+    color: #fff;
+    margin-bottom: 38px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+.radio1-pacienti{
+    top: 30px;
+    /* bottom: 30px; */
+    margin-bottom: 30px;
+    position: relative;
+}
+.radio1-pacienti label{
+    position: absolute;
+    top: -7px;
+    left: 0;
+    /* right: 41px; */
+    margin-right: 20px;
+    padding: 10px 0;
+    color: #03e9f4;
+    pointer-events: none;
+}
+.radio1-pacienti input{
+    width: 5%;
+    margin-left: 55px;
+    /* margin-top: 25px; */
+    padding: 0px 0;
+    color: #fff;
+    margin-bottom: 38px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+.inputi{
+    margin-left: 60%;
+}
+
+#vendbanimi{
+    top: 10px;
+    position: relative;
+    color: #03e9f4;
+
+}
+.adresat{
+    display: flex;
+    padding: 10px;
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+.v1 {
+    width: 45%;
+}
+.v2 {
+    width: 45%;
+    margin-left: 72px;
+}
+
+
+.pacient{
+    display: flex;
+}
+.pacient #p1, #p2{
+    padding-left: 115px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+.data {
+    width: 45%;
+}
+.ora {
+    width: 45%;
+    margin-left: 72px;
+}
+
+.ora label{
+    margin-left: 55%;
+}
+
+
+.appointment-box .button a{
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    top: 40px;
+    margin-bottom: 50px;
+    margin-left: 31%;
+    color:#03e9f4;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 30px;
+    letter-spacing: 4px;
+}
+.appointment-box .button a:hover{
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+    0 0 25px #03e9f4,
+    0 0 50px #03e9f4,
+    0 0 100px #03e9f4;
+}
+.appointment-box a span{
+    position: absolute;
+    display: block;
+}
+.appointment-box a span:nth-child(1){
+    top: 0;
+    left: -100%;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+}
+@keyframes btn-anim1{
+    0%{
+        left:-100%;
+    }
+    50%,100%{
+        left:100%;
+    }
+}
+.appointment-box a span:nth-child(2){
+    top: -100px;
+    right: 0;
+    width: 2px;
+    height: 100px;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+}
+@keyframes btn-anim2{
+    0%{
+        top:-100%;
+    }
+    50%,100%{
+        top:100%;
+    }
+}
+.appointment-box a span:nth-child(3){
+    bottom: 0;
+    right: -100%;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+}
+@keyframes btn-anim3{
+    0%{
+        right:-100%;
+    }
+    50%,100%{
+        right:100%;
+    }
+}
+.appointment-box a span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100px;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+}
+@keyframes btn-anim4{
+    0%{
+        bottom:-100%;
+    }
+    50%,100%{
+        bottom:100%;
+    }
+}
