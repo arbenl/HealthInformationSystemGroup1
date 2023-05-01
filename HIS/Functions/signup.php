@@ -1,5 +1,5 @@
 <?php
-include("DbControllers/DbConnect.php");
+include_once("DbControllers/DbConnect.php");
 
 
 session_start();

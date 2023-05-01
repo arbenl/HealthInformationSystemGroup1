@@ -7,7 +7,7 @@ class Database {
   private $host = 'localhost';
   private $username = 'root';
   private $password = 'RootAdmin.12@';
-  private $database = 'his';
+  private $database = 'healthinformationsystem';
 
   private function __construct() {
     $this->connection = new mysqli($this->host, $this->username, $this->password, $this->database);

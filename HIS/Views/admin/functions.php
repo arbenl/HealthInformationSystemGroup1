@@ -1,7 +1,8 @@
 <?php
-function displayData($search = "") {
-    include("DbControllers/DbConnect.php");
 
+function displayData($search = "")
+{
+    include_once("DbControllers/DbConnect.php");
     $conn = Database::getInstance()->getConnection();
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
@@ -9,16 +10,16 @@ function displayData($search = "") {
 
     if ($search != "") {
         $search = mysqli_real_escape_string($conn, $search);
-        $sql = "SELECT * FROM users WHERE username LIKE '%{$search}%' or role LIKE '%{$search}%' or personalnr LIKE '%{$search}%'";
+        $sql = "SELECT * FROM user WHERE user_name LIKE '%{$search}%' or user_role LIKE '%{$search}%'";
     } else {
-        $sql = "SELECT * FROM users limit 5";
+        $sql = "SELECT * FROM user limit 5";
     }
 
     $result = $conn->query($sql);
 
     $rows = array();
     if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
+        while ($row = $result->fetch_assoc()) {
             $rows[] = $row;
         }
     }

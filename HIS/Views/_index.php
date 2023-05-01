@@ -1,64 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-
-
-  <title>Hospital Menagment</title>
-
-  <link rel="stylesheet" href="assets/css/maicons.css">
-  <link rel="stylesheet" href="assets/css/bootstrap.css">
-  <link rel="stylesheet" href="assets/vendor/owl-carousel/css/owl.carousel.css">
-  <link rel="stylesheet" href="assets/vendor/animate/animate.css">
-  <link rel="stylesheet" href="assets/css/theme.css">
-</head>
-
-<body>
-
-
-  <div class="back-to-top"></div>
-
-
-  <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
-    <div class="container">
-      <a class="navbar-brand" href="#"><span class="text-primary">Hospital</span> Menagment</a>
-
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport"
-        aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupport">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Doctors</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">News</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="btn btn-primary ml-lg-3" href="">Login / Register</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  </header>
 
   <div class="page-hero bg-image overlay-dark" style="background-image: url(assets/img/bg_image_1.jpg);">
     <div class="hero-section">
@@ -124,28 +64,4 @@
     </div>
   </div>
 
-  <footer class="page-footer">
-    <div class="container">
-      <div class="row px-md-3">
 
-        <div class="col-sm-6 col-lg-3 py-3">
-          <h5>Contact</h5>
-          <p class="footer-link mt-2">Kosovë Prishtinë 10000</p>
-          <a href="#" class="footer-link">+383 49 000 000</a>
-          <a href="#" class="footer-link">hospitalmenagment@universitetiaab.com</a>
-
-
-
-        </div>
-      </div>
-
-      <hr>
-
-      <p id="copyright">Copyright &copy; 2023 <a href="https://aab-edu.net/" target="_blank">Kolegji AAB</a>. All right
-        reserved</p>
-    </div>
-  </footer>
-
-</body>
-
-</html>

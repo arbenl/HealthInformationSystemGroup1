@@ -1,10 +1,11 @@
 <?php
 include('Views/header.php');
+if (isset($_SESSION['auth'])){
+    header("Location:Views/NotFound/pagenotfound.php");
+}
 ?>
 <!--Log in function here -->
-<?php
-include ("Functions/login.php")
-?>
+
     <!--Log in view here -->
 <?php
 include ("Views/_login.php")

@@ -32,7 +32,7 @@ if (!isset($_SESSION['auth'])){
             <a class="nav-item nav-link active" href="#">Users</a>
             
             <a class="nav-item nav-link" href="Functions/logout.php">LogOut</a>
-            <a class="nav-item nav-link disabled" href="#">Disabled</a>
+
         </div>
     </div>
 </nav>

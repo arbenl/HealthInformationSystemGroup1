@@ -211,83 +211,82 @@
         }
     </style>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
 </head>
 
 <body>
-    <div class="container-xl">
-        <form method="get">
-            <input type="text" id="search" name="search">
-            <input type="submit" value="Search1">
-        </form>
+<div class="container-xl">
+    <form method="get">
+        <input type="text" class="text-info" id="search" name="search">
+        <input type="submit" class="btn btn-primary" value="Search">
+    </form>
 
-        <?php
-        // include the function file
-        include 'functions.php';
+    <?php
+    // include the function file
+    include('functions.php');
 
-        // check if the form was submitted
-        if (isset($_GET['search'])) {
-            // get the array of rows
-            $rows = displayData($_GET['search']);
-        } else {
-            // if the form was not submitted, get all rows
-            $rows = displayData();
-        }
-        ?>
-        <div class="table-responsive">
-            <div class="table-wrapper">
-                <div class="table-title">
-                    <div class="row">
-                        <div class="col-sm-5">
-                            <h2>User <b>Management</b></h2>
-                        </div>
+    // check if the form was submitted
+    if (isset($_GET['search'])) {
+        // get the array of rows
+        $rows = displayData($_GET['search']);
+    } else {
+        // if the form was not submitted, get all rows
+        $rows = displayData();
+    }
+    ?>
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h2>User <b>Management</b></h2>
+                    </div>
 
-                        <div class="col-sm-7">
+                    <div class="col-sm-7">
 
-                            <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
-                            <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>
-                        </div>
+                        <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i>
+                            <span>Add New User</span></a>
+                        <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>
                     </div>
                 </div>
-                <table class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Name</th>
-                            <th>Surname</th>
-                            <th>username</th>
-                            <th>PersonalNr</th>
-                            <th>Role</th>
-                            <th>e-Mail</th>
-                            <th>Phone</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($rows as $row) { ?>
-                            <tr>
-                                <td><?php echo $row['userid']; ?></td>
-                                <td><a href="#"> <?php echo $row['name']; ?></a></td>
-                                <td><?php echo $row['surname']; ?></td>
-                                <td><?php echo $row['username']; ?></td>
-                                <td><?php echo $row['personalnr']; ?></td>
-                                <td><?php echo $row['role']; ?></td>
-                                <td><?php echo $row['email']; ?></td>
-                                <td><?php echo $row['phone']; ?></td>
-                                <td>
-                                    <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
-                                    <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                    </tbody>
-                </table>
-                
             </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Username</th>
+                    <th>Role</th>
+                    <th>e-Mail</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Options</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($rows as $row) { ?>
+                    <tr>
+                        <td><?php echo $row['user_id']; ?></td>
+                        <td><a href="#"> <?php echo $row['user_name']; ?></a></td>
+                        <td><?php echo $row['user_role']; ?></td>
+                        <td><?php echo $row['user_email']; ?></td>
+                        <td><?php echo $row['user_mobile']; ?></td>
+                        <td><?php echo $row['user_address']; ?></td>
+                        <td>
+                            <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i
+                                        class="material-icons">&#xE8B8;</i></a>
+                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+                        </td>
+                    </tr>
+                <?php } ?>
+                </tbody>
+            </table>
+
         </div>
     </div>
+</div>
 </body>
 
 </html>
