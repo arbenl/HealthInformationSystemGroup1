@@ -29,8 +29,9 @@ if (!isset($_SESSION['auth'])){
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="index.php">Home</a>
             <a class="nav-item nav-link active" href="#">Users</a>
-            
+
             <a class="nav-item nav-link" href="Functions/logout.php">LogOut</a>
 
         </div>
