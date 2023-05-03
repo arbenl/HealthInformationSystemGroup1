@@ -1,13 +1,13 @@
 <?php
-
+//Futini te dhenat tuaja personale te MySql per lidhje ne databazen qe e keni ne serverin local
 
 class Database {
   private static $instance = null;
   private $connection;
   private $host = 'localhost';
-  private $username = 'root';
-  private $password = 'RootAdmin.12@';
-  private $database = 'healthinformationsystem';
+  private $username = 'root';//By default tek te gjithe serverat eshte root
+  private $password = 'RootAdmin.12@';//By default eshte pa password
+  private $database = 'healthinformationsystem';//Emrin e databazes
 
   private function __construct() {
     $this->connection = new mysqli($this->host, $this->username, $this->password, $this->database);

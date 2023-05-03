@@ -17,7 +17,7 @@
     <form method="POST">
 
         <label for="username" class="label">Username</label>
-        <input type="text" id="username" name="username" placeholder="Shkruani username" class="input" required>
+        <input type="text" id="username" name="username" placeholder="Shkruani username" class="input" required = "*">
 
         <label for="email" class="label">Email</label>
         <input type="email" id="email" name="email" placeholder="Shkruani e-Mail" class="input" required>
@@ -28,19 +28,7 @@
         <label for="password" class="label">Password</label>
         <input type="password" id="password" name="password" placeholder="Shkruani fjalkalimin" class="input" required>
 
-        <label for="emri">Emri</label>
-        <input type="text" id="emri" name="name" placeholder="Shkruani emrin" required>
 
-        <label for="mbiemri">Mbiemri</label>
-        <input type="text" id="mbiemri" name="surname" placeholder="Shkruani mbiemrin" required>
-
-
-        <label for="nrpersonal">Numri personal</label>
-        <input type="text" id="nrpersonal" name="personalnr" placeholder="Shkruani numrin personal" required>
-
-
-        <label for="profesioni">Profesioni</label>
-        <input type="text" id="pozita" name="profession" placeholder="Shkruani profesionin" required>
 
         <input type="submit" name="submit" value="Regjistrohu">
     </form>

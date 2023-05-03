@@ -117,7 +117,7 @@ function selectDataById($tableName, $id) {
   }
 
   // Build SQL query
-  $sql = "SELECT * FROM $tableName WHERE pat_userid=$id";
+  $sql = "SELECT * FROM patient WHERE pat_userid=$id";
 
   // Execute SQL query
   $result = $conn->query($sql);

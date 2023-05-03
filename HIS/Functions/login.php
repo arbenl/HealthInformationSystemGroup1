@@ -38,7 +38,7 @@ if (!empty($username) || !empty($password)) {
         }
         die();
     } else {
-        $errorMsg = "No user found on this username";
+        $errorMsg = "No user found with this username";
         $_SESSION['message'] = $errorMsg;
     }
 } else {
