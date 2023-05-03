@@ -95,5 +95,3 @@ include('Functions/login.php');
         </div>
     </div>
 </nav>
-</header>
-<title>HIS</title>
