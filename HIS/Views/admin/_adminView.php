@@ -209,6 +209,47 @@
             margin-top: 10px;
             font-size: 13px;
         }
+        .bg-modal {
+	    background-color: rgba(0, 0, 0, 0.8);
+	    width: 100%;
+	    height: 100%;
+	    position: absolute;
+	    top: 0;
+	    display: none;
+	    justify-content: center;
+	    align-items: center;
+        }
+        .modal-contents {
+	    height: 500px;
+	    width: 700px;
+	    background-color: white;
+	    text-align: center;
+	    padding: 20px;
+	    position: relative;
+	    border-radius: 4px;
+        }
+
+        .input-modal {
+	    margin: 15px auto;
+	    display: block;
+	    width: 50%;
+	    padding: 8px;
+	    border: 1px solid gray;
+        }
+        .close {
+	    position: absolute;
+	    top: 0;
+	    right: 10px;
+	    font-size: 42px;
+	    color: #333;
+	    transform: rotate(45deg);
+	    cursor: pointer;
+	     &:hover {
+		color: #666;
+	    }
+}
+
+
     </style>
     <script>
         $(document).ready(function () {
@@ -247,9 +288,10 @@
 
                     <div class="col-sm-7">
 
-                        <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i>
-                            <span>Add New User</span></a>
-                        <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>
+                        <a href="#" id="user-input"class="btn btn-secondary "><i class="material-icons ">&#xE147;</i>
+                            <span>Add New Uer</span></a>
+                        <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> 
+                        <span>Export to Excel</span></a>
                     </div>
                 </div>
             </div>
@@ -287,6 +329,40 @@
         </div>
     </div>
 </div>
+<div class="bg-modal">
+	<div class="modal-contents">
+
+		<div class="close">+</div>
+
+		<form action="">
+			<input class="input-modal" type="text" placeholder="Name">
+			<input class="input-modal" type="email" placeholder="E-Mail">
+			<a href="#" class="button">Submit</a>
+		</form>
+
+	</div>
+    <script >// Get the modal and the button that opens it
+var modal = document.querySelector('.bg-modal');
+var btnOpenModal = document.getElementById('user-input');
+
+// When the button is clicked, show the modal
+btnOpenModal.addEventListener('click', function() {
+    modal.style.display = 'flex';
+});
+
+// Get the close button inside the modal and add an event listener to hide the modal when it is clicked
+var closeButton = document.querySelector('.close');
+closeButton.addEventListener('click', function() {
+    modal.style.display = 'none';
+});
+
+// Also, hide the modal when the user clicks outside of it
+window.addEventListener('click', function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+});
+</script>
 </body>
 
 </html>
