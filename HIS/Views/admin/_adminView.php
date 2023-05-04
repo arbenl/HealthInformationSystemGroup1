@@ -210,44 +210,101 @@
             font-size: 13px;
         }
         .bg-modal {
-	    background-color: rgba(0, 0, 0, 0.8);
-	    width: 100%;
-	    height: 100%;
-	    position: absolute;
-	    top: 0;
-	    display: none;
-	    justify-content: center;
-	    align-items: center;
-        }
-        .modal-contents {
-	    height: 500px;
-	    width: 700px;
-	    background-color: white;
-	    text-align: center;
-	    padding: 20px;
-	    position: relative;
-	    border-radius: 4px;
-        }
-
-        .input-modal {
-	    margin: 15px auto;
-	    display: block;
-	    width: 50%;
-	    padding: 8px;
-	    border: 1px solid gray;
-        }
-        .close {
-	    position: absolute;
-	    top: 0;
-	    right: 10px;
-	    font-size: 42px;
-	    color: #333;
-	    transform: rotate(45deg);
-	    cursor: pointer;
-	     &:hover {
-		color: #666;
-	    }
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
+
+.modal-contents {
+  height: 600px;
+  width: 850px;
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 80%;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+
+select {
+  margin: 5px 0;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 42px;
+  color: #333;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #666;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.btn {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background-color: #666;
+}
+
+.btn:hover {
+  background-color: #3e8e41;
+}
+
+.btn-secondary:hover {
+  background-color: #4c4c4c;
+}
+.btn-primary {
+  background-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+}
+
+
 
 
     </style>
@@ -260,9 +317,7 @@
 
 <body>
 <div class="container-xl">
-    <form method="get">
-        <input type="text" class="text-info" id="search" name="search">
-        <input type="submit" class="btn btn-primary" value="Search">
+    
     </form>
 
     <?php
@@ -330,17 +385,41 @@
     </div>
 </div>
 <div class="bg-modal">
-	<div class="modal-contents">
+  <div class="modal-contents">
 
-		<div class="close">+</div>
+    <div class="close">+</div>
 
-		<form action="">
-			<input class="input-modal" type="text" placeholder="Name">
-			<input class="input-modal" type="email" placeholder="E-Mail">
-			<a href="#" class="button">Submit</a>
-		</form>
+    <form action="">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
 
-	</div>
+      <label for="role">Role:</label>
+      <select id="role" name="role" required>
+        <option value="">--Select--</option>
+        <option value="admin">Admin</option>
+        <option value="staff">Staff</option>
+        <option value="user">User</option>
+      </select>
+
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" required>
+
+      <div class="btn-container">
+        <button type="submit" id="user-input" class="btn btn-primary">
+          
+          Add New User
+        </button>
+        <button type="button" id="cancel-btn" class="btn btn-primary">Cancel</button>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+
     <script >// Get the modal and the button that opens it
 var modal = document.querySelector('.bg-modal');
 var btnOpenModal = document.getElementById('user-input');
@@ -362,6 +441,7 @@ window.addEventListener('click', function(event) {
         modal.style.display = 'none';
     }
 });
+
 </script>
 </body>
 
