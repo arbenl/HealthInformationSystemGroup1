@@ -67,7 +67,7 @@ outline: none;
 background: transparent;
 }
 
-.text-pacienti label{
+.text-pacienti label {
     position: absolute;
     top:  0;
     left: 0;
@@ -153,7 +153,43 @@ background: transparent;
     width: 45%;
     margin-left: 72px;
 }
-
+.text-departmenti{
+    position: absolute;
+    top:  0;
+    left: 0;
+    padding: 10px 0;
+    color:#03e9f4;
+    pointer-events: none;
+}
+#departamenti{
+    margin-top: 40px;
+}
+select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    font-size: 16px;
+    color: #555;
+    appearance: none; /* Removes the default arrow icon */
+    background-image: url("dropdown-arrow.png"); /* Add your own arrow icon */
+    background-repeat: no-repeat;
+    background-position: right center;
+  }
+  
+  /* Hover effect */
+  select:hover {
+    background-color: #ebebeb;
+    border-color: #aaa;
+  }
+  
+  /* Focus effect */
+  select:focus {
+    outline: none;
+    box-shadow: 0 0 5px #ddd;
+    border-color: #aaa;
+  }
+  
 
 .pacient{
     display: flex;
