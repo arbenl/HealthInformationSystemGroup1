@@ -318,7 +318,7 @@ select {
 <body>
 <div class="container-xl">
     
-    </form>
+    
 
     <?php
     // include the function file
@@ -389,9 +389,11 @@ select {
 
     <div class="close">+</div>
 
-    <form action="">
+    <form action="adminView.php" method="post">
       <label for="username">Username:</label>
       <input type="text" id="username" name="username" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
 
       <label for="role">Role:</label>
       <select id="role" name="role" required>
@@ -401,8 +403,12 @@ select {
         <option value="user">User</option>
       </select>
 
+      
       <label for="phone">Phone:</label>
       <input type="tel" id="phone" name="phone" required>
+      
+      <label for="e-mail">E-mail:</label>
+      <input type="text" id="e-mail" name="e-mail" required>
 
       <label for="address">Address:</label>
       <input type="text" id="address" name="address" required>
@@ -435,12 +441,20 @@ closeButton.addEventListener('click', function() {
     modal.style.display = 'none';
 });
 
+// Get the cancel button inside the modal and add an event listener to hide the modal when it is clicked
+var cancelButton = document.querySelector('#cancel-btn');
+cancelButton.addEventListener('click', function() {
+    modal.style.display = 'none';
+});
+
 // Also, hide the modal when the user clicks outside of it
 window.addEventListener('click', function(event) {
     if (event.target == modal) {
         modal.style.display = 'none';
     }
 });
+
+
 
 </script>
 </body>
