@@ -1,4 +1,6 @@
-create database healthinformationsystem
+CREATE DATABASE healthinformationsystem;
+
+USE healthinformationsystem;
 
 CREATE TABLE User (
     user_id INT PRIMARY KEY,
@@ -7,7 +9,6 @@ CREATE TABLE User (
     user_email VARCHAR(50),
     user_address VARCHAR(100)
 );
-
 CREATE TABLE Login (
     login_id INT PRIMARY KEY, 
     login_username VARCHAR(50),

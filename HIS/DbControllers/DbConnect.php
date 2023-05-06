@@ -6,7 +6,7 @@ class Database {
   private $connection;
   private $host = 'localhost';
   private $username = 'root';
-  private $password = 'RootAdmin.12@';
+  private $password = '';
   private $database = 'healthinformationsystem';
 
   private function __construct() {
