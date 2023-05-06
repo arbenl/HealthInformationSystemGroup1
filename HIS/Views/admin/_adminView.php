@@ -209,6 +209,100 @@
             margin-top: 10px;
             font-size: 13px;
         }
+        .bg-modal {
+            background-color: rgba(0, 0, 0, 0.8);
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-contents {
+            height: 600px;
+            width: 850px;
+            background-color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            border-radius: 4px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: 80%;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+
+        select {
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid gray;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .close {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            font-size: 42px;
+            color: #333;
+            transform: rotate(45deg);
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #666;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            color: #fff;
+            background-color: #4caf50;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-secondary {
+            background-color: #666;
+        }
+
+        .btn:hover {
+            background-color: #3e8e41;
+        }
+
+        .btn-secondary:hover {
+            background-color: #4c4c4c;
+        }
+        .btn-primary {
+            background-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+        }
     </style>
     <script>
         $(document).ready(function() {
@@ -249,12 +343,10 @@
                             </div>
 
                             <div class="col-sm-7">
-
-                                <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i>
-                                    <span>Add New User</span></a>
+                                <a href="#" id="user-input"class="btn btn-secondary "><i class="material-icons ">&#xE147;</i>
+                                    <span>Add New Uer</span></a>
                                 <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i>
-                                    <span>Export to
-                                        Excel</span></a>
+                                    <span>Export to Excel</span></a>
                             </div>
                         </div>
                         <table class="table table-striped table-hover">
@@ -326,6 +418,70 @@
                     })
                 })
             </script>
+            <div class="bg-modal">
+                <div class="modal-contents">
+
+                    <div class="close">+</div>
+
+                    <form action="adminView.php" method="post">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                        <label for="role">Role:</label>
+                        <select id="role" name="role" required>
+                            <option value="">--Select--</option>
+                            <option value="admin">Admin</option>
+                            <option value="staff">Staff</option>
+                            <option value="user">User</option>
+                        </select>
+
+                        <label for="phone">Phone:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <label for="e-mail">E-mail:</label>
+                        <input type="text" id="e-mail" name="e-mail" required>
+
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" name="address" required>
+
+                        <div class="btn-container">
+                            <button type="submit" id="user-input" class="btn btn-primary">
+
+                                Add New User
+                            </button>
+                            <button type="button" id="cancel-btn" class="btn btn-primary">Cancel</button>
+                        </div>
+                    </form>
+
+                    <div class="close" id="close">+</div>
+                </div>
+            </div>
+                <script >// Get the modal and the button that opens it
+                    var modal = document.querySelector('.bg-modal');
+                    var btnOpenModal = document.getElementById('user-input');
+
+                    // When the button is clicked, show the modal
+                    btnOpenModal.addEventListener('click', function() {
+                        modal.style.display = 'flex';
+                    });
+
+                    // Get the close button inside the modal and add an event listener to hide the modal when it is clicked
+                    var closeButton = document.querySelector('#close');
+                    closeButton.addEventListener('click', function() {
+                        modal.style.display = 'none';
+                    });
+                    var cancelButton = document.querySelector('#cancel-btn');
+                    cancelButton.addEventListener('click', function() {
+                        modal.style.display = 'none';
+                    });
+
+                    // Also, hide the modal when the user clicks outside of it
+                    window.addEventListener('click', function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = 'none';
+                        }
+                    });
+                </script>
 </body>
 
 </html>!
