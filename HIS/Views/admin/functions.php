@@ -29,22 +29,3 @@ function displayData($search = "")
 
     return $rows;
 }
-function deleteUser($user_id)
-{
-    include_once("DbControllers/DbConnect.php");
-    $conn = Database::getInstance()->getConnection();
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    $user_id = mysqli_real_escape_string($conn, $user_id);
-    $sql = "DELETE FROM user WHERE user_id = {$user_id}";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "Record deleted successfully";
-    } else {
-        echo "Error deleting record: " . $conn->error;
-    }
-
-    $conn->close();
-}
