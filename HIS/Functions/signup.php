@@ -1,5 +1,6 @@
 <?php
 include_once("DbControllers/DbConnect.php");
+include_once("Functions/data.php");
 
 
 session_start();
@@ -12,10 +13,7 @@ if (isset($_POST["submit"])) {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $phone = mysqli_real_escape_string($conn, $_POST['phone']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $surname = mysqli_real_escape_string($conn, $_POST['surname']);
-    $personalnr = mysqli_real_escape_string($conn, $_POST['personalnr']);
-    $profession = mysqli_real_escape_string($conn, $_POST['profession']);
+
 
 
 
@@ -24,7 +22,7 @@ if (isset($_POST["submit"])) {
         $_SESSION['message'] = "Please fill in all fields.";
     } else {
 
-        $query = "SELECT * FROM users WHERE username='$username'";
+        $query = "SELECT * FROM user WHERE use_rname='$username'";
         $result = mysqli_query($conn, $query);
         $role = "patient";
         if (mysqli_num_rows($result) > 0) {
@@ -33,7 +31,7 @@ if (isset($_POST["submit"])) {
 //            header("Location: SignUpPage.php");
         } else {
             // Insert new user into database
-            $query = "INSERT INTO `users` (`surname`, `personalnr`, `profession`, `username`, `email`, `password`, `name`, `role`, phone) VALUES ('$surname','$personalnr','$profession', '$username', '$email', '$password', '$name', '$role', '$phone')";
+            $query = "INSERT INTO `user` (user_name, user_password, user_mobile, user_email) VALUES ('$username', '$password', '$phone', '$email')";
             $result = mysqli_query($conn, $query);
             header("Location: LoginPage.php");
             if($result){

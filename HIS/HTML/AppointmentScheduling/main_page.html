@@ -124,151 +124,50 @@
 
       </div>
     <!--Pyetja 1-->
-        <label id="vendbanimi"> Në cilin departament doni të caktoni terminin? </label>
-        <div class="pacient">
-        <div id="p1">
-        <!--1--><input 
-          type="checkbox"
-          name="alergologji"
-          id="alergologji"
-        />Alergologji<br>
-        <!--2--><input
-          type="checkbox"
-          name="anatomopatologji"
-          id="anatomopatologji"
-        />Anatomopatologji<br>
-        <!--3--><input
-          type="checkbox"
-          name="anesteziologji"
-          id="anesteziologji"
-        />Anesteziologji<br>
-        <!--4--><input
-          type="checkbox"
-          name="check up"
-          id=""
-        />Check Up<br>
-        <!--5--><input
-          type="checkbox"
-          name="dermatologji"
-          id=""
-        />Dermatologji<br>
-        <!--6--><input
-          type="checkbox"
-          name="qendrat"
-          id=""
-        />Qendrat e Dializës<br>
-        <!--7--><input
-          type="checkbox"
-          name="endokrinologji"
-          id=""
-        />Endokrinologji<br>
-        <!--8--><input
-          type="checkbox"
-          name="gastroenterologji"
-          id=""
-        />Gastroenterologji<br>
-        <!--9--><input
-          type="checkbox"
-          name="endokrinologji"
-          id=""
-        />Hematologji<br>
-        <!--10--><input
-          type="checkbox"
-          name="endokrinologji"
-          id=""
-        />Imazheri e Avancuar<br>
-        <!--11--><input
-          type="checkbox"
-          name="endokrinologji"
-          id=""
-        />Fekondimi in Vitro (IVF)<br>
-        <!--12--><input
-          type="checkbox"
-          name="endokrinologji"
-          id=""
-        />Kardiokirurgji<br>
-        <!--13--><input
-          type="checkbox"
-          name="endokrinologji"
-          id=""
-        />Kardiologji<br>
-        <!--14--><input
-          type="checkbox"
-          name="endokrinologji"
-          id=""
-        />Kirurgji e Përgjithshme</div>
-        <div id="p2">
-        <!--15--><input
-          type="checkbox"
-          name="endokrinologji"
-          id=""
-        />Kirurgji Plastike<br>
-        <!--16--><input
-          type="checkbox"
-          name="endokrinologji"
-          id=""
-        />Nefrologji<br>
-        <!--17--><input
-          type="checkbox"
-          name="endokrinologji"
-          id=""
-        />Neurokirurgji<br>
-        <!--18--><input
-          type="checkbox"
-          name="endokrinologji"
-          id=""
-        />Obstetrikë Gjinekologji<br>
-        <!--19--><input
-          type="checkbox"
-          name="endokrinologji"
-          id=""
-        />Okulistikë<br>
-        <!--20--><input
-          type="checkbox"
-          name="endokrinologji"
-          id=""
-        />Onkologji<br>
-        <!--21--><input
-          type="checkbox"
-          name="endokrinologji"
-          id=""
-        />Ortopedi<br>
-        <!--22--><input
-          type="checkbox"
-          name="endokrinologji"
-          id=""
-        />Neonatologji-Pediatri<br>
-        <!--23--><input
-          type="checkbox"
-          name="endokrinologji"
-          id=""
-        />Pneumologji<br>
-        <!--24--><input
-          type="checkbox"
-          name="endokrinologji"
-          id=""
-        />Proktologji<br>
-        <!--25--><input
-          type="checkbox"
-          name="endokrinologji"
-          id=""
-        />Reumatologji<br>
-        <!--26--><input
-          type="checkbox"
-          name="endokrinologji"
-          id=""
-        />Urologji<br>
-        <!--27--><input
-          type="checkbox"
-          name="endokrinologji"
-          id=""
-        />Urgjencë 24 Orë<br>
-        <!--28--><input
-          type="checkbox"
-          name="endokrinologji"
-          id=""
-        />ORL</div>
-      </div>
+    <div class="text-pacienti" id="dep">
+    <label for="departamenti">Në cilin departament doni të caktoni terminin?</label>
+    <select id="departamenti" name="departamenti">
+      <option value="alergologji">Zgjidhni nga opcionet</option>
+      <option value="alergologji">Alergologji</option>
+      <option value="anatomopatologji">Anatomopatologji</option>
+      <option value="anesteziologji">Anesteziologji</option>
+      <option value="check_up">Check Up</option>
+      <option value="dermatologji">Dermatologji</option>
+      <option value="qendrat_dialize">Qendrat e Dializës</option>
+      <option value="endokrinologji">Endokrinologji</option>
+      <option value="gastroenterologji">Gastroenterologji</option>
+      <option value="hematologji">Hematologji</option>
+      <option value="imazheri_avancuar">Imazheri e Avancuar</option>
+      <option value="fekondimi_in_vitro">Fekondimi in Vitro (IVF)</option>
+      <option value="kardiokirurgji">Kardiokirurgji</option>
+      <option value="kardiologji">Kardiologji</option>
+      <option value="kirurgji_pergjithshme">Kirurgji e Përgjithshme</option>
+      <option value="kirurgji_plastike">Kirurgji Plastike</option>
+      <option value="nefrologji">Nefrologji</option>
+      <option value="neurokirurgji">Neurokirurgji</option>
+      <option value="obstetrike_gjinekologji">Obstetrikë Gjinekologji</option>
+      <option value="okulistike">Okulistikë</option>
+      <option value="onkologji">Onkologji</option>
+      <option value="ortopedi">Ortopedi</option>
+      <option value="neonatologji_pediatri">Neonatologji-Pediatri</option>
+      <option value="pneumologji">Pneumologji</option>
+      <option value="proktologji">Proktologji</option>
+      <option value="reumatologji">Reumatologji</option>
+      <option value="urologji">Urologji</option>
+      <option value="urgjence_24_ore">Urgjencë 24 Orë</option>
+      <option value="orl">ORL</option>
+    </select>
+  </div>
+  <br><br>
+  <div class="text-pacienti">
+    <label> Shënoni arsyen për caktimin e terminit.</label>
+    <input
+      type="text"
+      name="pyetja3"
+      id="pyetja3"
+    />
+  </div>
+    
 
       <div class="radio1-pacienti">
         <label> A keni caktuar termin më herët në të njëjtin departament? </label>
@@ -315,7 +214,7 @@
   
 
       <div class="button">
-        <a href="#">
+        <a href='verification.html'>
             <span></span>
             <span></span>
             <span></span>

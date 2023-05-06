@@ -66,23 +66,32 @@ include('Functions/login.php');
                     <a class="nav-link" href="">Contact</a>
                 </li>
                 <?php
-                if (!isset($_SESSION['auth'])){ ?>
+                if (!isset($_SESSION['auth'])) { ?>
                     <li class="nav-item">
                         <a class="btn btn-primary ml-lg-3" href="LoginPage.php">Login / Register</a>
                     </li>
                     <?php
+                } else if ($_SESSION["ROLE"] == "user") {
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="patientView.php">Health Center</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" href="Functions/logout.php">LogOut</a>
+                    </li>
+                    <?php
+                } else if ($_SESSION["ROLE"] == "admin") {
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="adminView.php">Admin Panel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" href="Functions/logout.php">LogOut</a>
+                    </li>
+                    <?php
                 }
-                else{
                 ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="patientView.php">Patient Management</a>
-                </li>
-                <?php
-                        }
-                        ?>
             </ul>
         </div>
     </div>
 </nav>
-</header>
-<title>HIS</title>

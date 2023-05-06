@@ -223,8 +223,11 @@
             <input type="text" class="text-info" id="search" name="search">
             <input type="submit" class="btn btn-primary" value="Search">
         </form>
+        <div class="container-xl">
 
-        <?php
+
+
+            <?php
         // include the function file
         include('functions.php');
 
@@ -237,94 +240,63 @@
             $rows = displayData();
         }
         ?>
-        <div class="table-responsive">
-            <div class="table-wrapper">
-                <div class="table-title">
-                    <div class="row">
-                        <div class="col-sm-5">
-                            <h2>User <b>Management</b></h2>
-                        </div>
+            <div class="table-responsive">
+                <div class="table-wrapper">
+                    <div class="table-title">
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <h2>User <b>Management</b></h2>
+                            </div>
 
-                        <div class="col-sm-7">
+                            <div class="col-sm-7">
 
-                            <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i>
-                                <span>Add New User</span></a>
-                            <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to
-                                    Excel</span></a>
+                                <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i>
+                                    <span>Add New User</span></a>
+                                <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i>
+                                    <span>Export to
+                                        Excel</span></a>
+                            </div>
                         </div>
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Username</th>
+                                    <th>Role</th>
+                                    <th>e-Mail</th>
+                                    <th>Phone</th>
+                                    <th>Address</th>
+                                    <th>Options</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($rows as $row) { ?>
+                                <tr id="row_<?php echo $row['user_id']; ?>">
+                                    <td><?php echo $row['user_id']; ?></td>
+                                    <td><a href="#"> <?php echo $row['user_name']; ?></a></td>
+                                    <td><?php echo $row['user_role']; ?></td>
+                                    <td><?php echo $row['user_email']; ?></td>
+                                    <td><?php echo $row['user_mobile']; ?></td>
+                                    <td><?php echo $row['user_address']; ?></td>
+                                    <td>
+                                    <td>
+                                        <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i
+                                                class="material-icons">&#xE8B8;</i></a>
+                                        <a href="#" class="delete" title="Delete" data-toggle="tooltip"
+                                            data-user-id="<?php echo $row['user_id']; ?>"><i
+                                                class="material-icons">&#xE5C9;</i></a>
+                                    </td>
+
+                                    </td>
+                                </tr>
+                                <?php } ?>
+
+                            </tbody>
+                        </table>
+
                     </div>
                 </div>
-                <table class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Username</th>
-                            <th>Role</th>
-                            <th>e-Mail</th>
-                            <th>Phone</th>
-                            <th>Address</th>
-                            <th>Options</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($rows as $row) { ?>
-                        <tr id="row_<?php echo $row['user_id']; ?>">
-                            <td><?php echo $row['user_id']; ?></td>
-                            <td><a href="#"> <?php echo $row['user_name']; ?></a></td>
-                            <td><?php echo $row['user_role']; ?></td>
-                            <td><?php echo $row['user_email']; ?></td>
-                            <td><?php echo $row['user_mobile']; ?></td>
-                            <td><?php echo $row['user_address']; ?></td>
-                            <td>
-                            <td>
-                                <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i
-                                        class="material-icons">&#xE8B8;</i></a>
-                                <a href="#" class="delete" title="Delete" data-toggle="tooltip"
-                                    data-user-id="<?php echo $row['user_id']; ?>"><i
-                                        class="material-icons">&#xE5C9;</i></a>
-                            </td>
-
-                            </td>
-                        </tr>
-                        <?php } ?>
-
-                    </tbody>
-                </table>
-
             </div>
-        </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <script>
-    $('.delete').click(function() {
-        let user_id = $(this).attr('data-user-id');
-        Swal.fire({
-            title: 'A deshironi te vazhdoni me fshirjen?',
-            showCancelButton: true,
-            confirmButtonText: 'Fshije',
-            cancelButtonText: 'Ndalo'
-        }).then((result) => {
-
-            if (result.isConfirmed) {
-                $.ajax({
-                    type: "POST",
-                    url: "Views/admin/delete.php",
-                    data: {
-                        user_id: user_id
-                    },
-                    success: function(data) {
-                        if (data == 1) {
-                            window.location.reload();
-                        }
-                    }
-                });
-            }
-        })
-    });
-    </script>
-
 </body>
 
 </html>!
