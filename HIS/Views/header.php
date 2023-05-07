@@ -16,10 +16,15 @@ include('Functions/login.php');
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap-icons.css"
           integrity="sha384-yU/4MNwI8CJW4g1nvzRGp4I/iEB+8c1BQvhgBzFO/ZY+HXKH47fvxhWgxC+HeZu" crossorigin="anonymous">
 
+
     <link rel="stylesheet" href="assets/css/maicons.css">
+
     <link rel="stylesheet" href="assets/css/bootstrap.css">
+
     <link rel="stylesheet" href="assets/vendor/owl-carousel/css/owl.carousel.css">
+
     <link rel="stylesheet" href="assets/vendor/animate/animate.css">
+
     <link rel="stylesheet" href="assets/css/theme.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
             integrity="sha384-JZR6SpejhOJoVatIVMou/ChYoYBtRVHp8zOGUFfFY1qzu2Zazt+OoA6XJm2Jm/+S"

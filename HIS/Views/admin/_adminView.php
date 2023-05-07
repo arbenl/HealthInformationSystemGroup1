@@ -370,13 +370,13 @@
                                         <td><?php echo $row['user_email']; ?></td>
                                         <td><?php echo $row['user_mobile']; ?></td>
                                         <td><?php echo $row['user_address']; ?></td>
-                                        <td>
+
                                         <td>
                                             <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
                                             <a href="#" class="delete" title="Delete" data-toggle="tooltip" data-user-id="<?php echo $row['user_id']; ?>"><i class="material-icons">&#xE5C9;</i></a>
                                         </td>
 
-                                        </td>
+
                                     </tr>
                                 <?php } ?>
 
@@ -484,4 +484,4 @@
                 </script>
 </body>
 
-</html>!
+</html>
