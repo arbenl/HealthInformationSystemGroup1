@@ -6,7 +6,7 @@ class Database {
   private $connection;
   private $host = 'localhost';
   private $username = 'root';//By default tek te gjithe serverat eshte root
-  private $password = '';//By default eshte pa password
+  private $password = 'RootAdmin.12@';//By default eshte pa password
   private $database = 'healthinformationsystem';//Emrin e databazes
 
   private function __construct() {

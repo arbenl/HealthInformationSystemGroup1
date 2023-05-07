@@ -80,7 +80,10 @@ $vals = array(
                     <a class="nav-link" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">My Account</a>
+                    <a class="nav-link" href="patientView.php">My Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="appointmentScheduling.php">Appointment Scheduling</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-item nav-link" href="Functions/logout.php">LogOut</a>
