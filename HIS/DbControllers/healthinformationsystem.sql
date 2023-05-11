@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 CREATE TABLE `user`
 (
-    `user_id`       int(11)      NOT NULL,
+    `user_id`       int(11)       NULL,
     `user_name`     varchar(50)  NOT NULL,
     `user_password` varchar(145) NOT NULL,
     `user_role`     varchar(145) NOT NULL,
@@ -277,3 +277,8 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT = @OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS = @OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION = @OLD_COLLATION_CONNECTION */;
+ALTER TABLE 'user'
+MODIFY user_id INT NULL;
+ALTER TABLE 'user'
+MODIFY user_id AUTO_INCREMENT;
+
