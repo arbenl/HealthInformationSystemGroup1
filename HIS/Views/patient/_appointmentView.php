@@ -240,8 +240,8 @@ $result = selectDataById($tableName, $_SESSION['ID']);
     }
 
     .appointment-box{
-        position:absolute;
-        top:145%;
+        position: absolute;
+        top:185%;
         left:51%;
         width:900px;
         padding: 40px;
