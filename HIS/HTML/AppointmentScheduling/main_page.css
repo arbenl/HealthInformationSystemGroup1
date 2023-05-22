@@ -5,11 +5,15 @@ body{
     margin:0;
     padding:0;
     font-family:sans-serif;
-    background: linear-gradient(#3760ac,#072444);
-    color: #fff;
+    background-image: url(pic1.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    color: #212529;
     font-size: 17px;
 }
-
 .appointment-box{
     position:absolute;
     top:145%;
@@ -17,7 +21,7 @@ body{
     width:900px;
     padding: 40px;
     transform: translate(-50% ,-50%);
-    background:rgba(62,147,161,0.5);
+    background:white;
     box-sizing:border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,6);
     border-radius: 10px;
@@ -26,13 +30,13 @@ body{
 .appointment-box h1{
     margin:0 0 30px;
     padding:0;
-    color: #03e9f4;
+    color: #212529;
     text-align:center;
 }
 .appointment-box h2{
     margin:0 0 30px;
     padding-bottom:40px;
-    color: #fff;
+    color: #212529;
     text-align:center;
 }
 
@@ -59,10 +63,10 @@ body{
 width: 100%;
 margin-top: 25px;
 padding: 10px 0;
-color:#fff;
+color:black;
 margin-bottom: 30px;
 border:none;
-border-bottom: 1px solid #fff;
+border-bottom: 1px solid black;
 outline: none;
 background: transparent;
 }
@@ -72,13 +76,14 @@ background: transparent;
     top:  0;
     left: 0;
     padding: 10px 0;
-    color:#03e9f4;
+    color:black;
     pointer-events: none;
 }
 
 .radio-pacienti{
     top: 5px;
     position: relative;
+    color: #000;
 }
 .radio-pacienti label{
     position: absolute;
@@ -87,7 +92,7 @@ background: transparent;
     /* right: 41px; */
     margin-right: 20px;
     padding: 10px 0;
-    color: #03e9f4;
+    color: black;
     pointer-events: none;
 }
 .radio-pacienti input{
@@ -115,7 +120,7 @@ background: transparent;
     /* right: 41px; */
     margin-right: 20px;
     padding: 10px 0;
-    color: #03e9f4;
+    color: black;
     pointer-events: none;
 }
 .radio1-pacienti input{
@@ -132,12 +137,13 @@ background: transparent;
 }
 .inputi{
     margin-left: 60%;
+    color:#000;
 }
 
 #vendbanimi{
     top: 10px;
     position: relative;
-    color: #03e9f4;
+    color: black;
 
 }
 .adresat{
@@ -222,7 +228,9 @@ select {
     margin-left: 55%;
 }
 
-
+.button a{
+    background-color: #17a2b8;
+}
 .appointment-box .button a{
     position: relative;
     display: inline-block;
@@ -230,7 +238,8 @@ select {
     top: 40px;
     margin-bottom: 50px;
     margin-left: 34%;
-    color: #03e9f4;
+    color: white;
+    border-radius: 5px;
     text-decoration: none;
     text-transform: uppercase;
     overflow: hidden;
@@ -247,7 +256,7 @@ select {
     0 0 50px #03e9f4,
     0 0 100px #03e9f4;
 }
-.appointment-box a span{
+/* .appointment-box a span{
     position: absolute;
     display: block;
 }
@@ -317,4 +326,4 @@ select {
     50%,100%{
         bottom:100%;
     }
-}
+} */
