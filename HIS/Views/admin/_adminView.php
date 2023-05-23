@@ -230,7 +230,7 @@
             border-radius: 4px;
         }
 
-        form {
+        .bg-form {
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
@@ -302,7 +302,57 @@
 
         .btn-primary:hover {
             background-color: #0069d9;
+        .text-info{
+            widh:20px;
         }
+      
+
+
+/* CSS */
+.button-58 {
+  align-items: center;
+  background-color: #4caf50;
+  border: 2px solid #06f;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: Inter,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  min-width: 140px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+
+
+@media (min-width: 768px) {
+  .button-58 {
+    min-width: 170px;
+  }*/
+}
+form{
+      margin-top: 10px  ;
+      display-inline:block;
+}
+.container-xl{
+    margin-top:10px;
+    padding-top:10px;
+}
+        }
+    
     </style>
     <script>
         $(document).ready(function() {
@@ -312,14 +362,17 @@
 </head>
 
 <body>
-    <div class="container-xl">
+<div class="container-xl">
         <form method="get">
             <input type="text" class="text-info" id="search" name="search">
-            <input type="submit" class="btn btn-primary" value="Search">
+            <input type="submit" class=" button-58" value="Search">
         </form>
-        <div class="container-xl">
+    </div>
+
+    
 
 
+            
 
             <?php
             // include the function file
@@ -423,7 +476,7 @@
 
                     <div class="close">+</div>
 
-                    <form action="adminView.php" method="post">
+                    <form action="adminView.php" method="post" class="bg-form">
                         <label for="username">Username:</label>
                         <input type="text" id="username" name="username" required>
                         <label for="password">Password:</label>
