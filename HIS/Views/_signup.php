@@ -14,7 +14,7 @@
     }
 
     ?>
-    <form method="POST">
+    <form action="Functions/signup.php" method="POST">
 
         <label for="username" class="label">Username</label>
         <input type="text" id="username" name="username" placeholder="Shkruani username" class="input" required = "*">

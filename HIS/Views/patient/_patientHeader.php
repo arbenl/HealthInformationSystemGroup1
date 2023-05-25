@@ -1,39 +1,4 @@
-<?php
-if (isset($_POST['submit'])) {
-    include_once("DbControllers/DbConnect.php");
-    include_once("Functions/data.php");
 
-
-    $conn = Database::getInstance()->getConnection();
-    $id = $_SESSION['ID'];
-    $fullname = mysqli_real_escape_string($conn, $_POST['fullname']);
-    $gender = mysqli_real_escape_string($conn, $_POST['gender']);
-    $age = mysqli_real_escape_string($conn, $_POST['age']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
-    $address = mysqli_real_escape_string($conn, $_POST['address']);
-
-    $cols = array("pat_userid", "pat_name", "pat_gender", "pat_age", "pat_email", "pat_mobile", "pat_address");
-
-$vals = array(
-    $id,
-    $fullname,
-    $gender,
-    $age,
-    $email,
-    $phone,
-    $address
-);
-
-    $result = insertDataIntoTable("patients", $cols, $vals);
-    if ($result == 1){
-        $insertMessage = "Data inserted successfully!";
-    }else{
-        $insertMessage = "Error!" .$conn ->error;
-
-    }
-}
-?>
 
 
 <!DOCTYPE html>

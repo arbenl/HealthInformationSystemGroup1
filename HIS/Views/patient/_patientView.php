@@ -1,14 +1,204 @@
 <?php
+include_once("DbControllers/DbConnect.php");
 
-$tableName = "patients";
 
-$result = selectDataById($tableName, $_SESSION['ID']);
-$address=$result['city'] . $result['street'] .$result['post_code']
+$conn = Database::getInstance()->getConnection();
+
+// Check the connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the values from the form fields
+    $first_name = $_POST["first_name"];
+    $last_name = $_POST["last_name"];
+    $date_of_birth = $_POST["date_of_birth"];
+    $gender = $_POST["gender"];
+    $phone_number = $_POST["phone"];
+    $email = $_POST["email"];
+    $street = $_POST["street"];
+    $city = $_POST["city"];
+    $post_code = $_POST["post_code"];
+    
+    // Generate a random patient_id
+    $min_patient_id = 1000; // Minimum value for patient_id
+    $max_patient_id = 10000000; // Maximum value for patient_id
+    $random_patient_id = mt_rand($min_patient_id, $max_patient_id);
+    $userid = $_SESSION['ID'];
+
+    // Prepare and execute the SQL query
+    $sql = "INSERT INTO patients (user_id, patient_id, first_name, last_name, date_of_birth, gender, phone_number, email, street, city, post_code)
+            VALUES ('$userid','$random_patient_id', '$first_name', '$last_name', '$date_of_birth', '$gender', '$phone_number', '$email', '$street', '$city', '$post_code')";
+
+    if ($conn->query($sql) === TRUE) {
+        header("Location: ".$_SERVER['PHP_SELF']);
+        exit();
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+// Close the database connection
+
 ?>
 
 
 
+<?php
 
+$tableName = "patients";
+
+$result = selectDataById($tableName, $_SESSION['ID']);
+if(!$result){
+    ?>
+    <div class="regjistimi">
+    <h1>Regjistro te dhenat tuaja</h1>
+
+    <form action="" method="POST">
+
+
+        <label for="username" class="label">Emri:</label>
+        <input type="text" id="username" name="first_name" placeholder="Shkruani Emrin" class="input" required>
+
+        <label for="email" class="label">Mbiemri:</label>
+        <input type="text" id="email" name="last_name" placeholder="Shkruani Mbiemrin" class="input" required>
+
+        <label for="email" class="label">Data e Lindjes:</label>
+        <input type="date" id="phone" name="date_of_birth" placeholder="Shkruani Daten e Lindjes" class="input" required>
+
+        
+        <label for="email" class="label">Gjinia</label>
+        <select name="gender" id="gender" class="input">
+            <option value="male">
+                Mashkull
+            </option>
+            <option value="female">
+                Femer
+            </option>
+        </select>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" class="input" value="<?=$_SESSION['EMAIL']?>"required>
+
+        <label for="phone">Pone</label>
+        <input type="text" name="phone" id="phone" class="input" value="<?=$_SESSION['MOBILE']?>"required>
+
+        <label for="street">Rruga</label>
+        <input type="text" name="street" id="street" class="input" placeholder="Shkruani rrugen ku jetoni"required>
+        
+        <label for="city">Qyteti</label>
+        <input type="text" name="city" id="city" class="input" placeholder="Shkruani Qytetin ku jetoni"required>
+        <label for="post_code">Post Code</label>
+        <input type="number" name="post_code" id="city" class="input" placeholder="Shkruani Qytetin ku jetoni"required>
+
+
+        <input type="submit" name="submit" value="Regjistrohu">
+    </form>
+
+
+    <div class="mbrapa">
+        <a href="LoginPage.php">Keni llogari? Kycu tani!</a>
+    </div>
+</div>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        min-width: 400px;
+
+    }
+
+    .headerregister {
+        height: 200px;
+
+        position: relative;
+
+    }
+
+    .headerregister h1 {
+
+        font-size: 45px;
+        font-family: 'Pacifico';
+        position: absolute;
+        top: 20px;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+
+    .regjistimi {
+        background-color: #fff;
+        width: 500px;
+        margin: 50px auto;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+
+    }
+
+    .regjistimi h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    form {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-column-gap: 10px;
+        align-items: center;
+    }
+
+    label {
+        margin-bottom: 10px;
+    }
+
+
+    input {
+        padding: 10px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    input[type="submit"] {
+        background-color: #4c98af;
+
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+
+        background-color: #085168;
+    }
+
+
+    a {
+        color: #1ea9d3;
+    }
+
+    .mbrapa {
+        align-self: center;
+        margin-top: 20px;
+    }
+</style>
+
+    <?php
+}else{
+$address=$result['city'] . $result['street'] .$result['post_code'];
+?>
 <div class="user-box">
     <h1>Health Information System Kosova</h1>
     <h2>User Profile</h2>
@@ -245,8 +435,17 @@ $address=$result['city'] . $result['street'] .$result['post_code']
             bottom:100%;
         }
     }
-
-
-
-
+    
 </style>
+    <?php
+}
+?>
+
+
+
+
+
+
+
+
+

@@ -40,13 +40,10 @@ if (!isset($_SESSION['auth'])){
         <div class="navbar-nav">
             <a class="nav-item nav-link active" href="index.php">Home</a>
             <a class="nav-item nav-link active" href="adminView.php">Users</a>
-<<<<<<< Updated upstream
             <a class="nav-item nav-link active" href="doctorManagement.php">Doctors</a>
             <a class="nav-item nav-link active" href="patientManagement.php">Patients</a>
-=======
             <a class="nav-item nav-link active" href="adminView.php"></a>
 
->>>>>>> Stashed changes
             <a class="nav-item nav-link" href="Functions/logout.php">LogOut</a>
         </div>
     </div>

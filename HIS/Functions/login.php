@@ -23,6 +23,8 @@ if (!empty($username) || !empty($password)) {
         $_SESSION['ID'] = $row['user_id'];
         $_SESSION['ROLE'] = $row['user_role'];
         $_SESSION['USERNAME'] = $row['user_name'];
+        $_SESSION['EMAIL'] = $row['user_email'];
+        $_SESSION['MOBILE'] = $row['user_mobile'];
 
         $userid = $userdata['user_id'];
         $username = $userdata['user_name'];
