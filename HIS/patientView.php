@@ -6,6 +6,4 @@ include("Functions/data.php");
 <?php
 include ("Views/patient/_patientView.php");
 ?>
-<?php
-include ("Views/footer.php");
-?>
+

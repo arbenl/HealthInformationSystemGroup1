@@ -25,7 +25,7 @@ $vals = array(
     $address
 );
 
-    $result = insertDataIntoTable("patient", $cols, $vals);
+    $result = insertDataIntoTable("patients", $cols, $vals);
     if ($result == 1){
         $insertMessage = "Data inserted successfully!";
     }else{

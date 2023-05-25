@@ -94,6 +94,12 @@ include('Functions/login.php');
                         <a class="nav-item nav-link" href="Functions/logout.php">LogOut</a>
                     </li>
                     <?php
+                }else{
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" href="Functions/logout.php">LogOut</a>
+                    </li>1
+                <?php
                 }
                 ?>
             </ul>

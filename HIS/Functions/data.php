@@ -27,7 +27,7 @@ function getAllTableData($tableName)
     }
 
     // Close database connection
-    $conn->close();
+
 
     // Return array of data
     return $data;
@@ -117,7 +117,7 @@ function selectDataById($tableName, $id) {
   }
 
   // Build SQL query
-  $sql = "SELECT * FROM patient WHERE pat_userid=$id";
+  $sql = "SELECT * FROM $tableName WHERE user_id=$id";
 
   // Execute SQL query
   $result = $conn->query($sql);
@@ -134,10 +134,46 @@ function selectDataById($tableName, $id) {
   }
 
   // Close database connection
-  $conn->close();
 
   // Return result as array
   return $data;
+}
+function selectDataByDocName($tableName, $docName) {
+    // Establish database connection
+    include_once("DbControllers/DbConnect.php");
+
+    $conn = Database::getInstance()->getConnection();
+
+    // Check for errors in the connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Escape the docName value to prevent SQL injection
+    $escapedDocName = $conn->real_escape_string($docName);
+
+    // Build SQL query
+    $sql = "SELECT * FROM $tableName WHERE doc_name='$escapedDocName'";
+
+    // Execute SQL query
+    $result = $conn->query($sql);
+
+    // Convert result to array
+    $data = array();
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        foreach ($row as $columnName => $columnValue) {
+            $data[$columnName] = $columnValue;
+        }
+    } else {
+        return 0;
+    }
+
+    // Close database connection
+    $conn->close();
+
+    // Return result as array
+    return $data;
 }
 
 

@@ -22,6 +22,7 @@ if (!empty($username) || !empty($password)) {
         $userdata = mysqli_fetch_array($login_query_run);
         $_SESSION['ID'] = $row['user_id'];
         $_SESSION['ROLE'] = $row['user_role'];
+        $_SESSION['USERNAME'] = $row['user_name'];
 
         $userid = $userdata['user_id'];
         $username = $userdata['user_name'];
