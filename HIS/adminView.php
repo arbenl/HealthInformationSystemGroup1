@@ -6,6 +6,7 @@ include("Functions/data.php");
 <?php
 include('Views/admin/_adminView.php');
 ?>
+
 <?php  
 $dbname = "healthinformationsystem";
 
@@ -21,7 +22,7 @@ $conn = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // Check if the form has been submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["insertUser"])) {
     // Get the form data
     $username = $_POST['username'];
     $password = $_POST['password'];
