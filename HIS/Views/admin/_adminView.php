@@ -336,7 +336,21 @@
   touch-action: manipulation;
 }
 
+.button-58:focus {
+  color: #171e29;
+}
 
+.button-58:hover {
+  background-color: #3385ff;
+  border-color: #3385ff;
+  fill: #06f;
+}
+
+.button-58:active {
+  background-color: #3385ff;
+  border-color: #3385ff;
+  fill: #06f;
+}
 
 @media (min-width: 768px) {
   .button-58 {

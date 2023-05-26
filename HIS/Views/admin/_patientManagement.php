@@ -212,18 +212,65 @@
         </head>
         <body>
         <?php
-            // include the function file
-            include('functions.php');
+// Assuming you have fetched the patient information from the database
+$patients = array(
+    array(
+        'patient_id' => 1,
+        'first_name' => 'John',
+        'last_name' => 'Doe',
+        'date_of_birth' => '1990-05-15',
+        'email' => 'john.doe@example.com'
+    ),
+    array(
+        'patient_id' => 2,
+        'first_name' => 'Jane',
+        'last_name' => 'Smith',
+        'date_of_birth' => '1985-12-10',
+        'email' => 'jane.smith@example.com'
+    ),
+    // Add more patient information here if needed
+);
+?>
 
-            // check if the form was submitted
-            if (isset($_GET['search'])) {
-                // get the array of rows
-                $rows = displayData($_GET['search']);
-            } else {
-                // if the form was not submitted, get all rows
-                $rows = displayData();
+        
+
+
+
+
+
+
+        <?php
+            
+            // Database configuration
+            $dbhost = "localhost";
+            $dbname = "healthinformationsystem.sql";
+            $dbuser = "root";
+            $dbpass = "13243546578";
+            
+            try {
+                // Establish a database connection
+                $conn = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+                
+                // Set the PDO error mode to exception
+                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                
+                // SQL query to retrieve doctors' information
+                $query = "SELECT * FROM patients";
+                
+                // Execute the query
+                $stmt = $conn->query($query);
+                
+                // Fetch all rows as an associative array
+                $doctors = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                
+                // Close the database connection
+                $conn = null;
+            } catch (PDOException $e) {
+                // Handle database connection errors
+                echo "Connection failed: " . $e->getMessage();
             }
             ?>
+            
         <div class="table-responsive">
                 <div class="table-wrapper">
                     <div class="table-title">
@@ -238,23 +285,24 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Username</th>
-                                    <th>Role</th>
-                                    <th>e-Mail</th>
-                                    <th>Phone</th>
-                                    <th>Address</th>
+                                    <th>Pacient ID</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Date of Birth</th>
+                                    <th>Email</th>
                                     <th>Options</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($rows as $row) { ?>
-                                    <tr id="row_<?php echo $row['user_id']; ?>">
-                                        <td><?php echo $row['user_id']; ?></td>
-                                        <td><a href="#"> <?php echo $row['user_name']; ?></a></td>
-                                        <td><?php echo $row['user_role']; ?></td>
-                                        <td><?php echo $row['user_email']; ?></td>
-                                        <td><?php echo $row['user_mobile']; ?></td>
-                                        <td><?php echo $row['user_address']; ?></td>
+                            <?php foreach ($patients as $patient) { ?>
+        <tr>
+            <td><?php echo $patient['patient_id']; ?></td>
+            <td><?php echo $patient['first_name']; ?></td>
+            <td><?php echo $patient['last_name']; ?></td>
+            <td><?php echo $patient['date_of_birth']; ?></td>
+            <td><?php echo $patient['email']; ?></td>
+        </tr>
+        <?php } ?>
 
                                         <td>
                                             <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
@@ -263,7 +311,7 @@
 
 
                                     </tr>
-                                <?php } ?>
+                                
 
                             </tbody>
                         </table>
