@@ -224,6 +224,29 @@
                 $rows = displayData();
             }
             ?>
+            <?php
+$dbname = "healthinformationsystem.sql";
+
+// Change these to your own database credentials
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "13243546578";
+
+try {
+    $conn = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $query = "SELECT * FROM doctor";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $doctors = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+?>
+            
+            
         <div class="table-responsive">
                 <div class="table-wrapper">
                     <div class="table-title">
@@ -238,23 +261,25 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Username</th>
-                                    <th>Role</th>
-                                    <th>e-Mail</th>
+                                    
+                                    <th>Name</th>
+                                    <th>Specialty</th>
+                                    <th>Email</th>
                                     <th>Phone</th>
                                     <th>Address</th>
                                     <th>Options</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($rows as $row) { ?>
-                                    <tr id="row_<?php echo $row['user_id']; ?>">
-                                        <td><?php echo $row['user_id']; ?></td>
-                                        <td><a href="#"> <?php echo $row['user_name']; ?></a></td>
-                                        <td><?php echo $row['user_role']; ?></td>
-                                        <td><?php echo $row['user_email']; ?></td>
-                                        <td><?php echo $row['user_mobile']; ?></td>
-                                        <td><?php echo $row['user_address']; ?></td>
+                            <?php foreach ($doctors as $doctor) { ?>
+                           <tr>
+                        <td><?php echo $doctor['doc_id']; ?></td>
+                        <td><?php echo $doctor['doc_name']; ?></td>
+                        <td><?php echo $doctor['doc_specialty']; ?></td>
+                        <td><?php echo $doctor['doc_email']; ?></td>
+                        <td><?php echo $doctor['doc_mobile']; ?></td>
+                        <td><?php echo $doctor['doc_add']; ?></td>
+                        
 
                                         <td>
                                             <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
@@ -271,5 +296,78 @@
                     </div>
                 </div>
             </div>
+           <!-- Include required libraries -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Place the JavaScript code -->
+<!--<script>
+$(document).ready(function() {
+  $('.delete').click(function() {
+    let id = $(this).attr('data-user-id');
+    Swal.fire({
+      title: 'Are you sure you want to proceed with the deletion?',
+      showCancelButton: true,
+      confirmButtonText: 'Delete',
+      cancelButtonText: 'Cancel',
+      icon: 'warning'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        $.ajax({
+          url: "delete2.php",
+          type: "post",
+          data: {
+            'doctor_id': id
+          },
+          success: function(response) {
+            if (response == 1) {
+              window.location.reload();
+            }
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+          }
+        });
+      }
+    });
+  });
+});
+</script>-->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  $(document).ready(function() {
+    $('.delete').click(function() {
+      let id = $(this).attr('data-user-id');
+      Swal.fire({
+        title: 'Are you sure you want to proceed with the deletion?',
+        showCancelButton: true,
+        confirmButtonText: 'Delete',
+        cancelButtonText: 'Cancel',
+        icon: 'warning'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          $.ajax({
+            url: "Views\admin\delete2.php",
+            type: "post",
+            data: {
+              'doc_id': id
+            },
+            success: function(response) {
+              if (response == 1) {
+                window.location.reload();
+              }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+              console.log(textStatus, errorThrown);
+            }
+          });
+        }
+      });
+    });
+  });
+</script>
+
+
                                 </body>
                                 </html>
