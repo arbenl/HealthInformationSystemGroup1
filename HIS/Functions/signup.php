@@ -55,7 +55,7 @@ if (isset($_POST["submit"])) {
 
         $query = "SELECT * FROM user WHERE user_name='$username'";
         $result = mysqli_query($conn, $query);
-        $role = "user";
+        $role = "user ";
         if (mysqli_num_rows($result) > 0) {
             $_SESSION['messageFromSignup'] = "User already exists with that username.";
 

@@ -198,6 +198,7 @@ if(!$result){
     <?php
 }else{
 $address=$result['city'] . $result['street'] .$result['post_code'];
+$_SESSION['patient_id'] = $result['patient_id'];
 ?>
 <div class="user-box">
     <h1>Health Information System Kosova</h1>

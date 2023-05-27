@@ -13,7 +13,7 @@ $dbname = "healthinformationsystem";
 // Change these to your own database credentials
 $dbhost = "localhost";
 $dbuser = "root";
-$dbpass = "RootAdmin.12@";
+$dbpass = "";
 
 // Create a new PDO instance and connect to the database
 $conn = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
