@@ -225,12 +225,12 @@
             }
             ?>
             <?php
-$dbname = "healthinformationsystem.sql";
+$dbname = "healthinformationsystem";
 
 // Change these to your own database credentials
 $dbhost = "localhost";
 $dbuser = "root";
-$dbpass = "13243546578";
+$dbpass = "";
 
 try {
     $conn = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);

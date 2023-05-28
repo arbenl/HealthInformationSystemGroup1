@@ -243,9 +243,9 @@ $patients = array(
             
             // Database configuration
             $dbhost = "localhost";
-            $dbname = "healthinformationsystem.sql";
+            $dbname = "healthinformationsystem";
             $dbuser = "root";
-            $dbpass = "13243546578";
+            $dbpass = "";
             
             try {
                 // Establish a database connection

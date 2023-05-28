@@ -266,27 +266,24 @@ $_SESSION['patient_id'] = $result['patient_id'];
 
 <style>
 
-    html{
-        height: 280%;
-    }
+
     body{
-        margin:0;
-        padding:0;
-        font-family:sans-serif;
-        background: linear-gradient(#3760ac,#072444);
+
+        background-image: url(assets/img/pic6.jpg);
         color: #fff;
         font-size: 17px;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .user-box{
-        position:absolute;
-        top:135%;
-        left:51%;
+        position: relative;
+        left:31%;
         width:725px;
-        height: 250%;
+
         padding: 40px;
-        transform: translate(-50% ,-50%);
-        background:rgba(62,147,161,0.5);
+
+        background-color: rgba(33, 90, 99, 0.5);
         box-sizing:border-box;
         box-shadow: 0 15px 25px rgba(0,0,0,6);
         border-radius: 10px;

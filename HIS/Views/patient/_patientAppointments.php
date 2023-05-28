@@ -64,7 +64,8 @@
           $appointments[] = array(
             'date' => $row['appointment_date'],
             'title' => $row['appointment_id'],
-            'description' => $row['pat_desc']
+            'description' => $row['pat_desc'],
+            'time' => $row['start_time']
           );
         }
       }
@@ -129,7 +130,7 @@
               cell.addEventListener('click', () => {
                 eventTitle.textContent = 'Titulli: ' + event.title;
                 eventDate.textContent = 'Data: ' + cellDate.toDateString();
-                eventDescription.textContent = 'Përshkrim: ' + event.description;
+                eventDescription.textContent = 'Përshkrim: ' + event.description +  '\n  Ora: ' + event.time;;
                 eventDetails.classList.add('active'); // Tregoj detajet e eventit
               });
             } else {

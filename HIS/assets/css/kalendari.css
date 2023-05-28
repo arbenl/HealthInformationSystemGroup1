@@ -104,17 +104,22 @@
   }
     
   .event {
-    border: 2px solid black;
-    border-radius: 25px;
-    box-sizing: border-box;
+
+    color: #fff;
+    background-color: rgba(33, 90, 99, 0.5);
+    border-radius: 10px;
+box-sizing: border-box;
   }
     
   .previous-date {
-    color: #222;
+    color: #000000;
+    width: 83px;
   }
     
   .upcoming-date {
-    color: #222;
+    color: #000000;
+    width: 83px;
+
   }
     
   .event-details {
@@ -153,10 +158,13 @@
   }
     
   .event-details.active {
+    
     display: block;
   }
   .current-day {
-    background-color: rgba(33, 90, 99, 0.5);
+    border: 1px solid black;
     border-radius: 10px;
     box-sizing: border-box;
   }
+
+  

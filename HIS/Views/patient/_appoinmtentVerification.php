@@ -24,7 +24,10 @@
         margin: 0;
         padding: 0;
         font-family: sans-serif;
-        background: linear-gradient(#3760ac, #072444);
+    background-image: url(assets/img/pic6.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
     }
     .page-footer{
         top: 90px;
@@ -35,39 +38,32 @@
         width: 800px;
         padding: 40px;
         top: 40px;
-        background: rgba(62, 147, 161, 0.5);
+        background-color: rgba(33, 90, 99, 0.5);
         bottom: 40px;
         box-sizing: border-box;
         box-shadow: 0 15px 25px rgba(0, 0, 0, 6);
         border-radius: 10px;
-
     }
-
     .verification-box h1 {
         margin: 0 0 30px;
         padding: 0;
         color: #03e9f4;
         text-align: center;
     }
-
     .verification-box h2 {
         margin: 0 0 30px;
         padding-bottom: 40px;
         color: #fff;
         text-align: center;
     }
-
     p {
         color: #03e9f4;
         padding-top: 10px;
     }
-
     a {
         color: #fff;
         text-decoration: none;
     }
-
-
     .verification-box .button a {
         position: relative;
         display: inline-block;

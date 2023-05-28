@@ -221,9 +221,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
 </div>
 <style>
-    html{
-    height: 290%;
-}
+
 body{
     margin:0;
     padding:0;
@@ -238,12 +236,12 @@ body{
     font-size: 17px;
 }
 .appointment-box{
-    position:absolute;
-    top:145%;
-    left:51%;
+    position:relative;
+    top: 50px;
+    left:30%;
     width:900px;
     padding: 40px;
-    transform: translate(-50% ,-50%);
+
     background:white;
     box-sizing:border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,6);
