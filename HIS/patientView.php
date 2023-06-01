@@ -1,5 +1,5 @@
 <?php
-session_start();
+include("Functions/login.php");
 include("Views/patient/_patientHeader.php");
 include("Functions/data.php");
 ?>
