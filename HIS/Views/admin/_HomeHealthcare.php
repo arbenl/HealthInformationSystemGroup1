@@ -237,15 +237,7 @@ width: 16px;
 height: 16px;
 }
 .dropdown-menu.datepicker { max-width:220px }
-  
-  
-  
-
-
-
-  
-
-/*# sourceMappingURL=bootstrap.css.map */
+ 
     </style>
   </head>
 
@@ -276,9 +268,10 @@ height: 16px;
                              <div class="row form-row">
                               <input type="text" placeholder="Emaili" class="form-control">
                             </div>
-                           <div class="row form-row">
-                              <input id="dat" type="text" placeholder="Data e terminit" class="form-control">
-                            </div>
+                            <div class="row form-row">
+                             <input id="dat" type="date" placeholder="Data e terminit" class="form-control">
+                             </div>
+
                             
                             <h6>Detajet e adreses</h6>
 
