@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Prescriptions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+
+    h2 {
+      color: #555;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 400px;
+    }
+
+    li {
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    #prescriptions-wrapper {
+      display: none;
+      text-align: center;
+    }
+
+    #show-button {
+      margin-bottom: 10px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: white;
+      color: #333;
+      font-size: 18px;
+      padding: 10px 20px;
+      border: 2px solid #333;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function togglePrescriptions() {
+      var prescriptionsWrapper = document.getElementById("prescriptions-wrapper");
+      var showButton = document.getElementById("show-button");
+      
+      if (prescriptionsWrapper.style.display === "none") {
+        prescriptionsWrapper.style.display = "block";
+        showButton.textContent = "Hide";
+      } else {
+        prescriptionsWrapper.style.display = "none";
+        showButton.textContent = "Show me";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>My Prescriptions</h1>
+
+  <button id="show-button" onclick="togglePrescriptions()">Show me</button>
+
+  <div id="prescriptions-wrapper">
+    <h2>Active Prescriptions</h2>
+    <ul>
+      <li>Prescription 1</li>
+      <li>Prescription 2</li>
+      <li>Prescription 3</li>
+      <!-- Add more active prescriptions here -->
+    </ul>
+
+    <h2>Inactive Prescriptions</h2>
+    <ul>
+      <li>Prescription 4</li>
+      <li>Prescription 5</li>
+      <!-- Add more inactive prescriptions here -->
+    </ul>
+  </div>
+
+</body>
+</html>
+
+
