@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/login.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+          <link rel="stylesheet" href="assets/css/pacientview.css">
     <link rel="stylesheet" href="assets/css/kalendari.css">
     <link rel="stylesheet" href="assets/css/maicons.css">
     <link rel="stylesheet" href="assets/css/bootstrap.css">
@@ -29,32 +30,26 @@
 <div class="back-to-top"></div>
 
 
-<nav class="navbar navbar-expand-lg bg-light navbar-light shadow-sm">
-    <div class="container">
-        <a class="navbar-brand" href="index.php"><span class="text-primary">Health</span> Center</a>
+<header>
+ 
+ <h1>Pacient VIEW      </h1>
+</header>
+
+<nav>
+ <!-- Add a navigation bar with links to different sections of the patient management page -->
+ <ul>
+   <li><a href="patientView.php">Profili</a></li>
+   <li><a href="appointmentScheduling.php">Terminet</a></li>
+   <li><a href="e-prescription.php">e-Prescription</a></li>
+
+ 
+   
+   
+     
+
+ </ul>
 
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport"
-                aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupport">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.php">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="patientView.php">My Account</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="appointmentScheduling.php">Appointment Scheduling</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-item nav-link" href="Functions/logout.php">LogOut</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+ <a href="Functions/logout.php" class="logout-button">Log out</a>
 

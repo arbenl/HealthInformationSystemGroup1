@@ -1,5 +1,6 @@
 <?php
-include('Views/_docHeader.php');
+include('Views/doc/_docHeader.php');
+include('Views/doc/_docView.php');
 ?>
 
 

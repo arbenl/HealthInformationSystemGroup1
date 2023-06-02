@@ -204,6 +204,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     type="time"
                     name="start_time"
                     id="ora"
+                    min="07:00"
+    max="22:00"
                 /></div>
         </div>
 
