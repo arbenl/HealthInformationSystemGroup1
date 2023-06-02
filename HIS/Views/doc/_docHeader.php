@@ -8,6 +8,7 @@
 
   
   <link rel="stylesheet" type="text/css" href="assets/css/doctorview.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/terapia.css">
 
 
 </head>
@@ -22,7 +23,7 @@
     <ul>
         <li><a href="#">Profili</a></li>
         <li><a href="#">Lista e termineve </a></li>
-        <li><a href="terapia.html">Cakto terapine </a></li>
+        <li><a href="docTerapia.php">Cakto terapine </a></li>
         
     </ul>
 
