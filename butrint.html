@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Health Care System</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="header">
+    <img src="images/HEADER.png" alt="Header Image">
+    <div class="header-buttons">
+      <button class="header-button">Home</button>
+      <button class="header-button">About</button>
+      <button class="header-button">Account</button>
+    </div>
+  </div>
+
+  <div class="doctor-info">
+      <img src="images/header2.png" alt="Top Image">
+    <h2>Health Care System</h2>
+    <div class="doctor-name">
+      <label for="doctor">Doctor:</label>
+      <select id="doctor">
+        <option value="Dr. Ermal">Dr. Ermal</option>
+        <option value="Dr. Arben">Dr. Arben</option>
+        <option value="Dr. Artan">Dr. Artan</option>
+      </select>
+    </div>
+  </div>
+  <div class="patient-info">
+    <h3>Patient Information</h3>
+    <div class="patient-details">
+      <label for="name">Patient Name:</label>
+      <input type="text" id="name">
+      <div class="gender-section">
+        <label for="gender">Gender:</label>
+        <div class="gender-options">
+          <span>
+            <input type="radio" name="gender" value="male">
+            <label for="male">M</label>
+          </span>
+          <span>
+            <input type="radio" name="gender" value="female">
+            <label for="female">F</label>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="age-section">
+      <label for="age">Age:</label>
+      <input type="number" id="age" class="age-input" min="1" max="99">
+    </div>
+    <div class="patient-details">
+      <label for="pastMedicalTreatment">Past Medical Treatment:</label>
+      <textarea rows="3" id="pastMedicalTreatment"></textarea>
+      <label for="allergies">Allergies:</label>
+      <input type="text" id="allergies">
+      <label for="appointment-date">Appointment Date:</label>
+      <input type="date" id="appointment-date" min="today" required>
+      <label for="appointment-time">Appointment Time:</label>
+      <input type="time" id="appointment-time" min="08:00" max="18:00" required>
+      <button onclick="return validateAppointment()">Submit</button>
+    </div>
+  </div>
+  <div class="doctor-image">
+    <img src="images/doktor1.avif" alt="Doctor">
+  </div>
+
+  <script>
+    function validateAppointment() {
+      var today = new Date().toISOString().split("T")[0];
+      var appointmentDate = document.getElementById("appointment-date").value;
+      var appointmentTime = document.getElementById("appointment-time").value;
+
+      if (appointmentDate < today) {
+        alert("Invalid appointment date. Please select a date from today or later.");
+        return false;
+      }
+
+      var timeParts = appointmentTime.split(":");
+      var hour = parseInt(timeParts[0]);
+
+      if (hour < 8 || hour >= 18) {
+        alert("Invalid appointment time. Please select a time between 8:00 AM and 6:00 PM.");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</body>
+</html>
