@@ -8,12 +8,12 @@ include('Views/admin/_adminView.php');
 ?>
 
 <?php  
-$dbname = "healthinformationsystem";
+$dbname = "healthinformationsystem.sql";
 
 // Change these to your own database credentials
 $dbhost = "localhost";
 $dbuser = "root";
-$dbpass = "";
+$dbpass = "13243546578";
 
 // Create a new PDO instance and connect to the database
 $conn = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
