@@ -48,7 +48,6 @@
         
     </ul>
 
-    <img src="assets/img/pacient.jpg" alt="Image" class="image">
     <a href="Functions/logout.php" class="logout-button">Log out</a>
 </div> 
   </nav>
