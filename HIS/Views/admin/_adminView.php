@@ -571,8 +571,9 @@ function openUpdateModal(userId, username,password, role, email, phone, address)
                 <select id="role" name="role" required>
                     <option value="">--Select--</option>
                     <option value="admin">Admin</option>
-                    <option value="staff">Staff</option>
+                    <option value="staff">Doktor</option>
                     <option value="user">User</option>
+                    <option value="Receptionist">Recepcionist</option>
                 </select>
 
                 <label for="phone">Phone:</label>
