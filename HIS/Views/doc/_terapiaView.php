@@ -1,11 +1,5 @@
 
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Terapia Form</title>
-</head>
-<body>
   <h1>Terapia</h1>
 
   <form method="POST" action="">

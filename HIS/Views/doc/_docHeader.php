@@ -1,4 +1,3 @@
-<?php session_start();?>
 
 
 <!DOCTYPE html>
@@ -9,6 +8,7 @@
   
   <link rel="stylesheet" type="text/css" href="assets/css/doctorview.css">
   <link rel="stylesheet" type="text/css" href="assets/css/terapia.css">
+  <link rel="stylesheet" href="assets/css/appo.css">
 
 
 </head>
@@ -22,12 +22,11 @@
     <!-- Add a navigation bar with links to different sections of the patient management page -->
     <ul>
         <li><a href="#">Profili</a></li>
-        <li><a href="#">Lista e termineve </a></li>
+        <li><a href="docAppList.php">Lista e termineve </a></li>
         <li><a href="docTerapia.php">Cakto terapine </a></li>
         
     </ul>
 
-    <img src="assets/img/pacient.jpg" alt="Image" class="image">
     <a href="Functions/logout.php" class="logout-button">Log out</a>
   </nav>
 
