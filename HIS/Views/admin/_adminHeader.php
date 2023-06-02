@@ -42,7 +42,7 @@ if (!isset($_SESSION['auth'])){
     <ul>
       <li><a href="adminView.php">Menaxhimi i Usereve</a></li>
       <li><a href="doctorManagement.php">Menaxhimi i doktoreve</a></li>
-      <li><a href="recnurseList.php">Menaxhimi i infermiereve</a></li>
+      <li><a href="admNurseMan.php">Menaxhimi i infermiereve</a></li>
       
     
       

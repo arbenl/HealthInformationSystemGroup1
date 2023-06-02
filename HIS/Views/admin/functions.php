@@ -60,3 +60,29 @@ function selectDocData($search = "")
 
     return $rows;
 }
+
+function selectData($tablename)
+{
+    include_once("DbControllers/DbConnect.php");
+    $conn = Database::getInstance()->getConnection();
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+
+        $sql = "SELECT * FROM $tablename limit 10";
+
+    $result = $conn->query($sql);
+
+    $rows = array();
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $rows[] = $row;
+        }
+    }
+
+
+    $conn->close();
+
+    return $rows;
+}

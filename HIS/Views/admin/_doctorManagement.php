@@ -298,67 +298,67 @@
 
     }
 
-        /* CSS */
+    /* CSS */
+    .button-58 {
+        align-items: center;
+        background-color: #4caf50;
+        border: 2px solid #06f;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: inline-flex;
+        fill: #000;
+        font-family: Inter, sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        height: 48px;
+        justify-content: center;
+        letter-spacing: -.8px;
+        line-height: 24px;
+        min-width: 140px;
+        outline: 0;
+        padding: 0 17px;
+        text-align: center;
+        text-decoration: none;
+        transition: all .3s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+    .button-58:focus {
+        color: #171e29;
+    }
+
+    .button-58:hover {
+        background-color: #3385ff;
+        border-color: #3385ff;
+        fill: #06f;
+    }
+
+    .button-58:active {
+        background-color: #3385ff;
+        border-color: #3385ff;
+        fill: #06f;
+    }
+
+    @media (min-width: 768px) {
         .button-58 {
-            align-items: center;
-            background-color: #4caf50;
-            border: 2px solid #06f;
-            box-sizing: border-box;
-            color: #fff;
-            cursor: pointer;
-            display: inline-flex;
-            fill: #000;
-            font-family: Inter, sans-serif;
-            font-size: 16px;
-            font-weight: 600;
-            height: 48px;
-            justify-content: center;
-            letter-spacing: -.8px;
-            line-height: 24px;
-            min-width: 140px;
-            outline: 0;
-            padding: 0 17px;
-            text-align: center;
-            text-decoration: none;
-            transition: all .3s;
-            user-select: none;
-            -webkit-user-select: none;
-            touch-action: manipulation;
+            min-width: 170px;
         }
 
-        .button-58:focus {
-            color: #171e29;
-        }
 
-        .button-58:hover {
-            background-color: #3385ff;
-            border-color: #3385ff;
-            fill: #06f;
-        }
+    }
 
-        .button-58:active {
-            background-color: #3385ff;
-            border-color: #3385ff;
-            fill: #06f;
-        }
+    form {
+        margin-top: 10px;
+        display-inline: block;
+    }
 
-        @media (min-width: 768px) {
-            .button-58 {
-                min-width: 170px;
-            }
-
-
-        }
-
-        form {
-            margin-top: 10px;
-            display-inline: block;
-        }
-
-        .container-xl {
-            margin-top: 10px;
-            padding-top: 10px;
-        }
+    .container-xl {
+        margin-top: 10px;
+        padding-top: 10px;
+    }
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -400,12 +400,12 @@
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-5">
-                        <h2>Patient <b>Management</b></h2>
+                        <h2>Doctor <b>Management</b></h2>
                     </div>
 
                     <div class="col-sm-7">
                         <a href="#" id="user-input" class="btn btn-secondary "><i class="material-icons ">&#xE147;</i>
-                            <span>Add New Patient</span></a>
+                            <span>Add New Doctor</span></a>
                     </div>
                 </div>
                 <table class="table table-striped table-hover">
@@ -416,7 +416,7 @@
                             <th>Full Name</th>
                             <th>Specialty</th>
                             <th>Mobile</th>
-                            <th>Email</th>                        
+                            <th>Email</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -458,34 +458,40 @@
                 </div>
                 <div class="modal-body">
                     <!-- Form fields for updating user data -->
-                    <form id="updateForm" action="Views/receptionist/update_pat.php" method="POST">
-                    <div class="form-group">
-                            <label for="updateUsername">Doc id</label>
-                            <input type="text" class="form-control" id="updateDocId" name="updateDocId" readonly>
-                        </div>                    <div class="form-group">
-                            <label for="updateUsername">User id</label>
-                            <input type="text" class="form-control" id="updateUserId" name="updateUserId" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="updateUsername">Doc Name</label>
-                            <input type="text" class="form-control" id="updateFullName" name="updateFullName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="updateUsername">Doc Specialty</label>
-                            <input type="text" class="form-control" id="updateDocSpec" name="updateDocSpec" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="updateRole">Doc Mobile</label>
-                            <input type="text" class="form-control" id="updateDocMobile" name="updateDocMobile" required>
-                        </div>                    
-                        <div class="form-group">
-                            <label for="updateEmail">Email</label>
-                            <input type="email" class="form-control" id="updateEmail" name="updateEmail" required>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <input type="submit" class="btn btn-primary" id="updateUserBtn" name="updateUser" value="Update">
-                        </div>
+                    <form action="doctorManagement.php" method="post" class="bg-form">
+    <div class="form-group">
+        <label for="updateDocId">Doc id</label>
+        <input type="text" class="form-control" id="updateDocId" name="updateDocId" readonly>
+    </div>
+    <div class="form-group">
+        <label for="updateUserId">User id</label>
+        <input type="text" class="form-control" id="updateUserId" name="updateUserId" required>
+    </div>
+    <div class="form-group">
+        <label for="updateFullName">Doc Name</label>
+        <input type="text" class="form-control" id="updateFullName" name="updateFullName" required>
+    </div>
+    <div class="form-group">
+        <label for="updateDocSpec">Doc Specialty</label>
+        <input type="text" class="form-control" id="updateDocSpec" name="updateDocSpec" required>
+    </div>
+    <div class="form-group">
+        <label for="updateDocMobile">Doc Mobile</label>
+        <input type="text" class="form-control" id="updateDocMobile" name="updateDocMobile" required>
+    </div>
+    <div class="form-group">
+        <label for="updateEmail">Email</label>
+        <input type="email" class="form-control" id="updateEmail" name="updateEmail" required>
+    </div>
+    <div class="btn-container">
+        <button type="submit" id="update-doctor" class="btn btn-primary" name="updateDoctor">
+            Update Doctor
+        </button>
+        <button type="button" id="cancel-btn" class="btn btn-primary">Cancel</button>
+    </div>
+</form>
+
+
                     </form>
                 </div>
 
@@ -530,54 +536,34 @@
 
             <div class="close">+</div>
 
-            <form action="doctorManagement.php" method="post" class="bg-form">                  
-                        <div class="form-group">
-                            <label for="updateUsername">User id</label>
-                            <input type="text" class="form-control" id="updateUserId" name="updateUserId" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="updateUsername">First Name</label>
-                            <input type="text" class="form-control" id="updateFirstName" name="updateFirstName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="updateUsername">Last Name</label>
-                            <input type="text" class="form-control" id="updateLastName" name="updateLastName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="updateRole">Birthday</label>
-                            <input type="text" class="form-control" id="updateBirthdate" name="updateBirthdate" required>
-                        </div>
-                        <select class="form-control" id="updateGender" name="updateGender" required>
-                                <option value="">--Select--</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                            </select>                        
-                            <div class="form-group">
-                            <label for="updatePhone">Phone</label>
-                            <input type="tel" class="form-control" id="updatePhone" name="updatePhone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="updateEmail">Email</label>
-                            <input type="email" class="form-control" id="updateEmail" name="updateEmail" required>
-                        </div>
+            <form action="doctorManagement.php" method="post" class="bg-form">
+                <div class="form-group">
+                    <label for="updateUsername">User id</label>
+                    <input type="text" class="form-control" id="updateUserId" name="updateUserId" required>
+                </div>
+                <div class="form-group">
+                    <label for="updateUsername">Full Name</label>
+                    <input type="text" class="form-control" id="updateFirstName" name="updateFullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="updateRole">Doc Specialty</label>
+                    <input type="text" class="form-control" id="updateDocSpecialty" name="updateDocSpecialty" required>
+                </div>
+                <div class="form-group">
+                    <label for="updatePhone">Phone</label>
+                    <input type="tel" class="form-control" id="updatePhone" name="updatePhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="updateEmail">Email</label>
+                    <input type="email" class="form-control" id="updateEmail" name="updateEmail" required>
+                </div>
 
-                        <div class="form-group">
-                            <label for="updateAddress">Street</label>
-                            <input type="text" class="form-control" id="updateStreet" name="updateStreet" required>
-                        </div>                        
-                        <div class="form-group">
-                            <label for="updateAddress">City</label>
-                            <input type="text" class="form-control" id="updateCity" name="updateCity" required>
-                        </div>                        
-                        <div class="form-group">
-                            <label for="updateAddress">Post Code</label>
-                            <input type="text" class="form-control" id="updatePostcode" name="updatePostcode" required>
-                        </div>
+
 
                 <div class="btn-container">
                     <button type="submit" id="user-input" class="btn btn-primary" name="insertUser">
 
-                        Add New User
+                        Add New Doctor
                     </button>
                     <button type="button" id="cancel-btn" class="btn btn-primary">Cancel</button>
                 </div>
@@ -613,7 +599,7 @@
             }
         });
     </script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         // Function to open the update modal and set user data
         function openUpdateModal(docId, userId, docName, docSpecialty, docMobile, docEmail) {
