@@ -10,14 +10,16 @@
     .logout-button {
       position: absolute;
       top: 50px;
-      right: 10px;
+      left: 10px;
       background-color: #3caea3;
       color: #fff;
       padding: 5px 5px;
       text-decoration: none;
       border-radius: 2px;
       font-size: 20px;
+      margin-left: 20px;
     }
+    
 
 
     /* Header styles */
